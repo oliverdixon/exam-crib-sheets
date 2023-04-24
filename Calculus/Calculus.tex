@@ -1,19 +1,66 @@
 % Calculus Examination Crib Sheet
+% INCOMPLETE: SEE TODO MARKERS
+%
 % OWD 2023
 
 \input{../preamble.tex}
 \newcommand{\modulename}{Calculus}
 
 \begin{document}
+%
+% SIDE 1
+%
 \centering
 \begin{tabular}{|m{.31\linewidth}|m{.31\linewidth}|m{.3\linewidth}|}
         \hline
-        1 & 2 & 3 \\
+        %
+        \textbf{L'H{\^ o}pital's Rule}: If $f$ and $g$ are differentiable
+        functions at $x_0$, $f(x_0)=g_(x_0)=0$, and $g^\prime(x_0)\neq 0$, then
+        $\lim_{x\to x_0} f(x)/g(x)=\lim_{x\to x_0} f^\prime(x)/g^\prime(x)$. &
+        %
+        \textbf{The IVT}: Suppose $a<b$ and $f$ is continuous on $[a,b]$.
+        Then, for every $y$ such that $\min(f(a),f(b)) < y < \max(f(a),f(b))$,
+        there exist $x_0\in (a,b)$ s.t.\ $f(x_0)=y$. &
+        %
+        \textbf{The Chain Rule}: If $g$ is differentiable at $x$ and $f$ is
+        differentiable at $g(x)$, then $f\circ g$ is differentiable at $x$, and
+        $(f\circ g)^\prime(x)=f^\prime(g(x))g^\prime(x)$. \\
+        %
         \hline
-        4 & 5 & 6 \\
+        %
+        \textbf{The IFT}: If $f:I\to\mathbb{R}$ is continuous and strictly
+        monotonic, then $f^{-1}:J\to I$ is also continuous, where $J=f(I)$ and
+        $f^{-1}(f(x))=x$ and $f(f^{-1}(y))=y$. &
+        %
+        \textbf{The MVT}: If $f:[a,b]\to\mathbb{R}$ is continuous and
+        differentiable on $(a,b)$, then there exist $x_0\in (a,b)$ such that
+        $f^\prime(x_0)=\left[f(b)-f(a)\right]/(b-a)$. &
+        %
+        \textbf{Classifying CPs}: If $f:[a,b]\to\mathbb{R}$, $f^\prime$,
+        $f^{\prime\prime}$ are sensibly defined, and $x_0\in (a,b)$ s.t.\ %
+        $f^\prime(x_0)=0$, then $f^{\prime\prime}(x_0)>0$ means local min., and
+        $f^{\prime\prime}(x_0)<0$ means local max. \\
+        %
+        \hline
+        %
+        \textbf{Taylor's Theorem (1)}: If $f\in C^{N+1}(I)$ and $x\in I$, then
+        $f(x)=\sum_{n=0}^N \left[f^{(n)}(x_0)(x-x_0)^n\right]/n!+1/N!
+        \int_{x_0}^x (x-t)^N f^{(N+1)}(t)\mathrm{d}t$. &
+        %
+        \textbf{Taylor's Theorem (2)}: The terms under the summation are the
+        \emph{Taylor polynomial} of $f$ at $x_0$, of order $N$. The integral
+        term is known as the \emph{error in integral form}. &
+        %
+        \textbf{Taylor's Theorem (3)}: The Lagrange form of the error is
+        $R_N(x)=\left[(x-x_0)^{N+1}f^{(N+1)(c)}\right]/(N+1)!$, for some $c$
+        between $x_0$ and $x$. \\
+        %
         \hline
 \end{tabular}
 \clearpage
+%
+% SIDE 2
+%
 \begin{tabular}{|m{.31\linewidth}|m{.31\linewidth}|m{.3\linewidth}|}
         \hline
         1 & 2 & 3 \\
