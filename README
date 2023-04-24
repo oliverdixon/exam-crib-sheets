@@ -1,5 +1,10 @@
 Double-sided A4 Crib Sheets for Mathematics Exams at The University of York
 
+Index of Sheets:
+
+ - Year 1: Calculus [In Progress, Exam: 25th May, 13:30--16:30, F/CENHL]
+ - Year 1: Algebra  [In Progress, Exam: 2nd June, 13:30--16:30, F/CENHL]
+
 NOTE: These documents are intended to pack as much information as possible onto
 two sides of A4, in line with the Departmental regulations on the use of crib
 sheets in examinations. Thus, they may, from time to time, break standard
@@ -26,9 +31,9 @@ three things:
 
 Frequently Asked Questions
 
-Q: Am I allowed to publish these?
+Q: Am I [OD] allowed to publish these?
 
-A: Yes; the sharing of revision resources is certainly allowed. York students
+A: Yes, the sharing of revision resources is certainly allowed. York students
    with a Mathematics VLE account can access a Moodle thread which confirms
    this: https://maths.york.ac.uk/moodle/mod/hsuforum/discuss.php?d=5155
 
@@ -38,7 +43,7 @@ A: Everything contained within this repository, along with the PDFs available
    on my University HTTP instance, is published under the MIT Licence. Please
    see the LICENSE file.
 
-Q: What are "publish.sh" and "publishing-index"? Can I use them?
+Q: What are "publish.sh" and "publishing-index"?
 
 A: The former is a simple Bash script that compresses PDFs, where necessary, and
    uploads them over SSH to my University's web server. The latter is an index

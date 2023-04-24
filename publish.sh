@@ -23,7 +23,7 @@ compress_pdf () {
                 -dPrinted=false          \
                 -sOutputFile="$TMP_NAME" "$1"
 
-        ret=$?
+        local ret=$?
 
         if [[ $ret -eq 0 ]]; then
                 echo -e "$PRINT_NAME\t$(du -h "$1" | cut -f1) ->" \
