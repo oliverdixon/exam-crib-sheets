@@ -57,3 +57,21 @@ A: The former is a simple Bash script that compresses PDFs, where necessary, and
    my University password and have a recent two-factor authentication code,
    neither of these files will be very useful to you ;)
 
+Q: Why have I [OD] made these resources public?
+
+A: I am sitting these exams, and I would've made all of these materials for
+   myself anyway, albeit in a private GitHub repository. I see no reason to not
+   publicise these documents and pieces of information; if you can think of one,
+   please e-mail me at od641@york.ac.uk.
+
+Q: Will these be kept up-to-date?
+
+A: Once I have sat an examination, I will consider the corresponding crib sheets
+   and notes as "archived", such that I will not make any updates aside from
+   fixing obvious errors. I will certainly not delete anything on the basis of
+   it no longer being personally useful, but nor will I be retrospectively
+   updating anything to maintain synchronicity with the ever-changing module
+   specifications and examination formats. If you [an arbitrary future student]
+   would like to assume that responsibility, feel free to make any changes in a
+   fork and submit a PR!
+
