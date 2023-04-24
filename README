@@ -24,3 +24,25 @@ three things:
  - If you have any corrections, comments, or questions concerning the content of
    this repository, please contact me at od641@york.ac.uk.
 
+Frequently Asked Questions
+
+Q: Am I allowed to publish these?
+
+A: Yes; the sharing of revision resources is certainly allowed. York students
+   with a Mathematics VLE account can access a Moodle thread which confirms
+   this: https://maths.york.ac.uk/moodle/mod/hsuforum/discuss.php?d=5155
+
+Q: Under what licence are these materials made available?
+
+A: Everything contained within this repository, along with the PDFs available
+   on my University HTTP instance, is published under the MIT Licence. Please
+   see the LICENSE file.
+
+Q: What are "publish.sh" and "publishing-index"? Can I use them?
+
+A: The former is a simple Bash script that compresses PDFs, where necessary, and
+   uploads them over SSH to my University's web server. The latter is an index
+   of all PDF documents that should be subject to this process. Unless you know
+   my University password and have a recent two-factor authentication code,
+   neither of these files will be very useful to you ;)
+
