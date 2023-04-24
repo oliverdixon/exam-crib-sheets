@@ -1,0 +1,43 @@
+% Examination Crib Sheet Common Preamble
+% OWD 2023
+
+\documentclass{article}
+\usepackage[a4paper, margin=2em, landscape]{geometry}
+\usepackage{array, xcolor, fancyhdr}
+\usepackage[en-GB]{datetime2}
+\usepackage[
+        colorlinks = true,
+        allcolors = darkgray
+]{hyperref}
+
+\title{\modulename\ Examination Crib Sheet (2022/23)}
+\author{Oliver Dixon}
+
+\setlength{\parindent}{0pt}
+
+% Header height set-up, in accordance with the margins
+\renewcommand{\headrulewidth}{0pt}
+\setlength{\headheight}{18pt}
+\setlength{\headsep}{1em}
+\addtolength{\topmargin}{\headheight}
+\makeatletter
+\addtolength{\topmargin}{\Gm@tmargin}
+\makeatother
+
+% Footer height set-up
+\renewcommand{\footrulewidth}{0pt}
+\addtolength{\textheight}{-6em}
+
+% Header and footer body set-up
+\makeatletter
+\fancypagestyle{fancy}{%
+	\fancyhf{}
+        \fancyhead[L]{\Large\textbf{\@title}}
+        \fancyhead[R]{\Large Compiled by \@author\ on \today}
+        \fancyfoot[L]{\Large\textsc{Side \thepage}}
+        \fancyfoot[R]{\Large\url{https://github.com/oliverdixon/%
+                exam-crib-sheets/\modulename}}
+}
+\makeatother
+\pagestyle{fancy}
+
