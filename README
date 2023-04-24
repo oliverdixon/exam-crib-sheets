@@ -1,2 +1,26 @@
 Double-sided A4 Crib Sheets for Mathematics Exams at The University of York
 
+NOTE: These documents are intended to pack as much information as possible onto
+two sides of A4, in line with the Departmental regulations on the use of crib
+sheets in examinations. Thus, they may, from time to time, break standard
+typographical practice in favour of practicality.
+
+Should you wish to use these sheets for your own exploits, you ought to know
+three things:
+
+ - The resultant PDFs are not tracked in version control. Therefore, you will
+   have to either (a) download and compile the documents on your own machine, or
+   (b) use the ones that I have compiled and made available on-line. Option (a)
+   is not particularly difficult, and they don't require any exotic packages
+   that aren't on CTAN and included in every modern TeX Live distribution. If
+   you'd prefer (b), see: https://www-users.york.ac.uk/~od641/exam-crib-sheets.
+
+ - The margins and text are abnormally small, for the reasons described above.
+   Some home printers (old home InkJet series and the like) might have trouble
+   printing these documents correctly, so I recommend using a high-resolution
+   office laser printer, such as the ones scattered throughout The University of
+   York campuses.
+
+ - If you have any corrections, comments, or questions concerning the content of
+   this repository, please contact me at od641@york.ac.uk.
+
