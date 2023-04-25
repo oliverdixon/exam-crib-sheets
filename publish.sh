@@ -85,7 +85,7 @@ upload_files () {
         local NET_DOMAIN="its.york.ac.uk"
         local NET_USER="od641"
 
-        if [[ "$#" -le 1 ]]; then
+        if [[ "$#" -lt 1 ]]; then
                 print_warning "Nothing to process or upload!"
                 return 0
         fi
