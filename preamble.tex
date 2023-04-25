@@ -29,17 +29,14 @@
 \addtolength{\textheight}{-6em}
 
 % Header and footer body set-up
-\makeatletter
-\fancypagestyle{fancy}{%
-	\fancyhf{}
-        \fancyhead[L]{\Large\textbf{\@title}}
-        \fancyhead[R]{\Large Compiled by \@author\ on \today}
-        \fancyfoot[L]{\Large\textsc{Side \thepage}}
-        \fancyfoot[R]{\Large\url{https://github.com/oliverdixon/%
-                exam-crib-sheets/tree/master/\modulename}}
-}
-\makeatother
 \pagestyle{fancy}
+\makeatletter
+\fancyhead[L]{\Large\textbf{\@title}
+\fancyhead[R]{\Large Compiled by \@author\ on \today}}
+\makeatother
+\fancyfoot[L]{\Large\textsc{Side \thepage}}
+\fancyfoot[R]{\Large\url{https://github.com/oliverdixon/exam-crib-sheets/tree/%
+        master/\modulename}}
 
 \renewcommand{\arraystretch}{1.2}
 \newcommand{\mathconst}[1]{\ensuremath\mathrm{#1}}
