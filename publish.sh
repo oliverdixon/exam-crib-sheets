@@ -5,13 +5,16 @@
 # new C-based PDF parser) and a copy of ImageMagick with the PDF and PNG codecs
 # installed and enabled.
 
-SSH_URL="od641@maxwell.york.ac.uk:~/web/exam-crib-sheets/"
 GIT_ROOT="$(git rev-parse --show-toplevel)"
 INDEX="$GIT_ROOT/publishing_index"
 remote_list=()
 
 print_warning () {
-        echo "Warning: $@" >&2
+        echo -e "$(basename "$0"): Warning: $@" >&2
+}
+
+print_info () {
+        echo -e "$(basename "$0"): Info: $@"
 }
 
 # compress_pdf: Given a single PDF file, use GhostScript to perform an in-place
@@ -35,7 +38,7 @@ compress_pdf () {
         ret=$?
 
         if [[ $ret -eq 0 ]]; then
-                echo -e "Compressed: $1 from $(du -h "$1" | cut -f1) to" \
+                print_info "Compressed: $1 from $(du -h "$1" | cut -f1) to" \
                         "$(du -h --apparent-size "$TMP_NAME" | cut -f1)"
                 mv "$TMP_NAME" "$1"
         fi
@@ -66,10 +69,39 @@ update_raster () {
                         "${RASTER_NAME}.png"
 
                 ret=$?
-                [[ $ret -eq 0 ]] && echo "Rasterised: $1"
+                [[ $ret -eq 0 ]] && print_info "Rasterised: $1"
         fi
 
         return $ret
+}
+
+# upload_files: Given a list of files, determine the most efficient route to
+# transport them to the predefined host. If we are already on a York machine, we
+# can do a local copy with rsync. Otherwise, rsync-over-SSH is used.
+
+upload_files () {
+        local WEB_PATH="~/web/exam-crib-sheets"
+        local SSH_URL="maxwell.york.ac.uk"
+        local NET_DOMAIN="its.york.ac.uk"
+        local NET_USER="od641"
+
+        if [[ "$#" -le 1 ]]; then
+                print_warning "Nothing to process or upload!"
+                return 0
+        fi
+
+        if [[ $(dnsdomainname) == $NET_DOMAIN ]] && \
+                        [[ $(whoami) == $NET_USER ]]; then
+                print_info "Copying to the Local Network..."
+                rsync -Rvtu "$@" "${WEB_PATH/#\~/$HOME}"
+        else
+
+                print_info "Publishing to the Remote... (Requires York network" \
+                        "access)"
+                rsync -Rvtu -e 'ssh -q' "$@" "$NET_USER@$SSH_URL:$WEB_PATH"
+        fi
+
+        return $?
 }
 
 while read file; do
@@ -88,40 +120,33 @@ while read file; do
                 grep -qsm 1 "^%%Invocation: gs" "$file"
                 if [[ $? -eq 1 ]]; then
                         compress_pdf "$file"
-                        ret=$?
-                        [[ $ret -ne 0 ]] && exit $ret
+                        if [[ $? -ne 0 ]]; then
+                                print_warning "Skipping processing of $file"
+                                continue
+                        fi
                 fi
 
+                remote_list+=("$remote_file")
+
                 # Re-generate rasters for the given file, where necessary.
-
                 update_raster "$file"
-                ret=$?
-                [[ $ret -ne 0 ]] && exit $ret
 
-                # Update the remote publication list, assuming that two raster
-                # pages were generated for each file.
-
-                remote_list+=("$remote_file" "${remote_file%.*}_Raster-0.png" \
-                        "${remote_file%.*}_Raster-1.png")
+                if [[ $? -eq 0 ]]; then
+                        # Update the remote publication list, assuming that two
+                        # raster pages were generated for each file.
+                        remote_List+="${remote_file%.*}_Raster-0.png" \
+                                "${remote_file%.*}_Raster-1.png"
+                else
+                        print_warning "Skipping rasters of $file"
+                fi
         else
                 print_warning "$file was listed in the index but does not" \
                         "exist."
         fi
 done < "$INDEX"
 
-# If necessary, send all valid files listed by the publication index to the
-# remote with rsync, where the local copy is newer. The rsync return code is
-# forwarded.
+# Send all files specified by the remote list to the destination
+upload_files "${remote_list[@]}"
 
-if [[ ${#remote_list[@]} -gt 0 ]]; then
-        echo -e "Publishing to the Remote... (Requires York VPN access)\n"
-        rsync -Rvtu --ignore-missing-args -e 'ssh -q' "${remote_list[@]}" \
-                "$SSH_URL"
-        ret=$?
-else
-        print_warning "Nothing to process or upload!"
-        ret=0
-fi
-
-exit $ret
+exit $?
 
