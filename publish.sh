@@ -7,7 +7,7 @@
 
 SSH_URL="od641@maxwell.york.ac.uk:~/web/exam-crib-sheets/"
 GIT_ROOT="$(git rev-parse --show-toplevel)"
-INDEX="$GIT_ROOT/publishing-index"
+INDEX="$GIT_ROOT/publishing_index"
 remote_list=()
 
 print_warning () {
