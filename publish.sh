@@ -82,17 +82,17 @@ while read file; do
                 # execute successfully, then its return code is forwarded.
 
                 grep -qs "%%Invocation: gs" "$file"
-                if [ $? -eq 1 ]; then
+                if [[ $? -eq 1 ]]; then
                         compress_pdf "$file"
                         ret=$?
-                        [ $ret -ne 0 ] && exit $ret
+                        [[ $ret -ne 0 ]] && exit $ret
                 fi
 
                 # Re-generate rasters for the given file, where necessary.
 
                 update_raster "$file"
                 ret=$?
-                [ $ret -ne 0 ] && exit $ret
+                [[ $ret -ne 0 ]] && exit $ret
 
                 # Update the remote publication list, assuming that two raster
                 # pages were generated for each file.
@@ -106,7 +106,7 @@ done < "$INDEX"
 # remote with rsync, where the local copy is newer. The rsync return code is
 # forwarded.
 
-if [ ${#remote_list[@]} -ne 0 ]; then
+if [[ ${#remote_list[@]} -ne 0 ]]; then
         echo -e "Publishing to the Remote... (Requires York VPN access)\n"
         rsync -Rvtu --ignore-missing-args -e 'ssh -q' "${remote_list[@]}" \
                 "$SSH_URL"
