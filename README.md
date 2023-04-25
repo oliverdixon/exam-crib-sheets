@@ -1,9 +1,16 @@
-# Crib Sheets for Mathematics Exams at The University of York
+# Examination Crib Sheets
+
+This repository contains, among other things, my personal collection of
+double-sided A4 crib sheets intended for use in Mathematics examinations at The
+University of York. If you just want the sheets and don't care about any of the
+technicalities, go straight to
+<https://www-users.york.ac.uk/~od641/exam-crib-sheets> and enjoy! Otherwise,
+continue reading.
 
 ## Index of Sheets
 
- * Year 1: Calculus [In Progress, Exam: 25th May, 13:30--16:30, F/CENHL]
- * Year 1: Algebra [In Progress, Exam: 2nd June, 13:30--16:00, F/CENHL]
+ * Year 1: Calculus [*In Progress*, Exam: 25th May, 13:30--16:30, F/CENHL]
+ * Year 1: Algebra [*In Progress*, Exam: 2nd June, 13:30--16:00, F/CENHL]
 
 ## Things to Know
 
@@ -22,9 +29,9 @@ three things:
 
     2. use the ones that I have compiled and made available on-line.
 
-  Option (1) is not particularly difficult, and they don't require any exotic
+  Option (i) is not particularly difficult, and they don't require any exotic
   packages that aren't on CTAN and included in every modern TeX Live
-  distribution. If you'd prefer (2), see:
+  distribution. If you'd prefer (ii), see:
   <https://www-users.york.ac.uk/~od641/exam-crib-sheets>. For convenience and
   accessibility, this link also contains rasters of each PDF for use in other
   applications e.g. MS Office.
