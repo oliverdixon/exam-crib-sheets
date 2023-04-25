@@ -10,6 +10,10 @@ GIT_ROOT="$(git rev-parse --show-toplevel)"
 INDEX="$GIT_ROOT/publishing-index"
 remote_list=()
 
+print_warning () {
+        echo "Warning: $@" >&2
+}
+
 # compress_pdf: Given a single PDF file, use GhostScript to perform an in-place
 # compression, and report the compression ratio to stdout. The GS return code is
 # forwarded.
@@ -31,7 +35,7 @@ compress_pdf () {
         ret=$?
 
         if [[ $ret -eq 0 ]]; then
-                echo -e "Compressed $1 from $(du -h "$1" | cut -f1) to" \
+                echo -e "Compressed: $1 from $(du -h "$1" | cut -f1) to" \
                         "$(du -h --apparent-size "$TMP_NAME" | cut -f1)"
                 mv "$TMP_NAME" "$1"
         fi
@@ -62,16 +66,16 @@ update_raster () {
                         "${RASTER_NAME}.png"
 
                 ret=$?
-                [[ $ret -eq 0 ]] && echo "Updated rasters for $1"
+                [[ $ret -eq 0 ]] && echo "Rasterised: $1"
         fi
 
         return $ret
 }
 
 while read file; do
-        [[ $file == \#* ]] && continue
+        [[ -z $file ]] || [[ $file == \#* ]] && continue
 
-        remote_path="$GIT_ROOT/./$file"
+        remote_file="$GIT_ROOT/./$file"
         file="$(realpath --relative-to=./ "$GIT_ROOT/$file")"
 
         if [[ -f $file ]]; then
@@ -81,7 +85,7 @@ while read file; do
                 # matching lines were found. If GS is required, but did not
                 # execute successfully, then its return code is forwarded.
 
-                grep -qs "%%Invocation: gs" "$file"
+                grep -qsm 1 "^%%Invocation: gs" "$file"
                 if [[ $? -eq 1 ]]; then
                         compress_pdf "$file"
                         ret=$?
@@ -97,8 +101,11 @@ while read file; do
                 # Update the remote publication list, assuming that two raster
                 # pages were generated for each file.
 
-                remote_list+=("$remote_path" "${remote_path%.*}_Raster-0.png" \
-                        "${remote_path%.*}_Raster-1.png")
+                remote_list+=("$remote_file" "${remote_file%.*}_Raster-0.png" \
+                        "${remote_file%.*}_Raster-1.png")
+        else
+                print_warning "$file was listed in the index but does not" \
+                        "exist."
         fi
 done < "$INDEX"
 
@@ -106,13 +113,13 @@ done < "$INDEX"
 # remote with rsync, where the local copy is newer. The rsync return code is
 # forwarded.
 
-if [[ ${#remote_list[@]} -ne 0 ]]; then
+if [[ ${#remote_list[@]} -gt 0 ]]; then
         echo -e "Publishing to the Remote... (Requires York VPN access)\n"
         rsync -Rvtu --ignore-missing-args -e 'ssh -q' "${remote_list[@]}" \
                 "$SSH_URL"
         ret=$?
 else
-        echo "Nothing to process or upload!"
+        print_warning "Nothing to process or upload!"
         ret=0
 fi
 
