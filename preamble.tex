@@ -3,7 +3,7 @@
 
 \documentclass{article}
 \usepackage[a4paper, margin=2em, landscape]{geometry}
-\usepackage{array, xcolor, fancyhdr, amssymb}
+\usepackage{array, xcolor, fancyhdr, amssymb, amsmath}
 \usepackage[en-GB]{datetime2}
 \usepackage[
         colorlinks = true,
@@ -40,4 +40,8 @@
 }
 \makeatother
 \pagestyle{fancy}
+
+\renewcommand{\arraystretch}{1.2}
+\newcommand{\mathconst}[1]{\ensuremath\mathrm{#1}}
+\DeclareMathOperator{\sgn}{sgn}
 

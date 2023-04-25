@@ -61,7 +61,8 @@ done < "$INDEX"
 
 if [ ${#publish_list[@]} -ne 0 ]; then
         echo -e "\nPublishing to the Remote... (Requires York VPN access)"
-        rsync -vtu --ignore-missing-args "${publish_list[@]}" "$SSH_URL"
+        rsync -vtu --ignore-missing-args -e 'ssh -q' "${publish_list[@]}" \
+                "$SSH_URL"
         ret=$?
 else
         echo -e "\nNothing to do!"
