@@ -45,15 +45,85 @@
         %
         \textbf{Taylor's Theorem (1)}: If $f\in C^{N+1}(I)$ and $x\in I$, then
         $f(x)=\sum_{n=0}^N \left[f^{(n)}(x_0)(x-x_0)^n\right]/n!+1/N!
-        \int_{x_0}^x (x-t)^N f^{(N+1)}(t)\mathrm{d}t$. &
+        \int_{x_0}^x (x-t)^N f^{(N+1)}(t)\,\mathconst{d}t$. &
         %
         \textbf{Taylor's Theorem (2)}: The terms under the summation are the
         \emph{Taylor polynomial} of $f$ at $x_0$, of order $N$. The integral
         term is known as the \emph{error in integral form}. &
         %
-        \textbf{Taylor's Theorem (3)}: The Lagrange form of the error is
+        \textbf{Taylor's Theorem (3)}: The \emph{Lagrange form} of the error is
         $R_N(x)=\left[(x-x_0)^{N+1}f^{(N+1)(c)}\right]/(N+1)!$, for some $c$
         between $x_0$ and $x$. \\
+        %
+        \hline
+        %
+        \textbf{Diff. Eq. (1)}: If $u^\prime(x)=cu(x)$, where
+        $c\in\mathbb{R}\setminus\{0\}$ and $A$ is an arbitrary constant, then
+        $u(x)=A\mathconst{e}^{cx}$. &
+        %
+        \textbf{Diff. Eq. (2)}: If $u^{\prime\prime}(x)=-c^2u(x)$, then
+        $A\cos(cx)+B\sin(cx)$, where $A$ and $B$ are arbitrary constants. &
+        %
+        \textbf{Diff. Eq. (3)}: If $u^{\prime\prime}(x)=c^2u(x)$, then
+        $u(x)=A\mathconst{e}^{cx}+B\mathconst{e}^{-cx}=C\cosh(cx)+D\sinh(cx)$,
+        for arb.\ constants $C, D$. \\
+        \hline
+        %
+        \textbf{Simple Diff. Eqs.}: A \emph{simple differential equation} has
+        the form $y^\prime(x)=f(x)$, and has solutions $y=\int f(x)\,
+        \mathconst{d}x+C$, for some arbitrary constant $C$. &
+        %
+        \textbf{Separable Diff. Eqs.}: A \emph{separable differential equation}
+        has the form $y^\prime(x)=f(x)/g(y)$. It has solutions $G(y)=F(x)+C$,
+        where $F^\prime=f$ and $G^\prime=g$. &
+        %
+        \textbf{Integrating Factors (1)}: A first-order ODE is \emph{linear} if
+        it has the form $a(x)y^\prime(x)+b(x)y+c(x)=0$. In \emph{standard form},
+        this is $y^\prime(x)=P(x)y+Q(x)=0$\ \ldots \\
+        \hline
+        %
+        \textbf{Integrating Factors (2)}: \ldots\ This can be solved to give
+        $y=\left[\int Q(x)F(x)\,\mathconst{d}x+C\right]/F(x)$, where
+        $F(x)=\exp\int P(x)\,\mathconst{d}x$ is the \emph{integrating factor}. &
+        %
+        \textbf{Derivative of Arc Sine}: \smash{$\dfrac{\mathconst{d}}%
+        {\mathconst{d}x}\arcsin(x)=\dfrac{1}{\sqrt{1-x^2}}$} &
+        %
+        \textbf{Derivative of Arc Cosine}: \smash{$\dfrac{\mathconst{d}}%
+        {\mathconst{d}x}\arccos(x)=\dfrac{-1}{\sqrt{1-x^2}}$} \\
+        %
+        \hline
+        %
+        \textbf{Derivative of Arc Tangent}: \smash{$\dfrac{\mathconst{d}}%
+        {\mathconst{d}x}\arctan(x)=\dfrac{1}{1+x^2}$} &
+        %
+        \textbf{Radian Measure (1)}: If $(x,y)\in\mathbb{R}^2$ with
+        $(x,y)\neq(0,0)$, then there is a unique solution to $x=r\cos\theta$
+        and $y=r\sin\theta$ for $\theta\in(-\pi,\pi]$ and $r>0$. &
+        %
+        \textbf{Radian Measure (2)}: If $x>0$, then $\theta=\arctan(y/x)$. If
+        $x=0$, $\theta=\sgn(y)\pi/2$. If $x<0$, then
+        $\theta=\arctan(y/x) + \pi$ if $y\geq 0$, or $\theta=\arctan(y/x)-\pi$
+        otherwise. \\
+        %
+        \hline
+        %
+        \textbf{Complex Circular Trigonometric Functions}: For
+        $z\in\mathbb{C}$, $\sin(z)=(\mathconst{e}^{\mathconst{i}z}-
+        \mathconst{e}^{-\mathconst{i}z})/2$, and $\sin(z)=(\mathconst{e}%
+        ^{\mathconst{i}z}+\mathconst{e}^{-\mathconst{i}z})/2$. Therefore,
+        $\tan(z)=\mathconst{i}(\mathconst{e}^{-\mathconst{i}z-\mathconst{e}%
+        ^{\mathconst{i}z}})/(\mathconst{e}^{-\mathconst{i}z}+\mathconst{e}%
+        ^{\mathconst{i}z})$. &
+        %
+        \textbf{Complex Hyperbolic Trigonometric Functions}: For
+        $z\in\mathbb{C}$, $\sinh(z)=(\mathconst{e}^z-\mathconst{e}^{-z})/2$,
+        $\cosh(z)=(\mathconst{e}^z+\mathconst{e}^{-z})/2$, and
+        $\tanh(z)=\sinh(z)/\cosh(z)$. &
+        %
+        \textbf{Trigonometric Identities (Hyperbolic Form)}: For $x$ and $y$,
+        $\sinh(x+y)=\sinh(x)\cosh(y) + \cosh(x)\sinh(y)$, and
+        $\cosh(x+y)=\cosh(x)\cosh(y) + \sinh(x)\sinh(y)$. \\
         %
         \hline
 \end{tabular}
