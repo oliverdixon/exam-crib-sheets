@@ -16,6 +16,7 @@ remote_list=()
 
 compress_pdf () {
         local TMP_NAME="$(dirname "$1")/tmp-$(date '+%s')-$RANDOM.pdf"
+        local ret=0
 
         gs                               \
                 -sDEVICE=pdfwrite        \
@@ -27,7 +28,7 @@ compress_pdf () {
                 -sOutputFile="$TMP_NAME" \
                 "$1"
 
-        local ret=$?
+        ret=$?
 
         if [[ $ret -eq 0 ]]; then
                 echo -e "Compressed $1 from $(du -h "$1" | cut -f1) to" \
@@ -55,6 +56,8 @@ update_raster () {
                         -density 150      \
                         -background white \
                         -alpha remove     \
+                        -colorspace gray  \
+                        -depth 4          \
                         "$1"              \
                         "${RASTER_NAME}.png"
 
@@ -66,9 +69,12 @@ update_raster () {
 }
 
 while read file; do
+        [[ $file == \#* ]] && continue
+
+        remote_path="$GIT_ROOT/./$file"
         file="$(realpath --relative-to=./ "$GIT_ROOT/$file")"
 
-        if [[ -f "$file" ]]; then
+        if [[ -f $file ]]; then
                 # We first compress each file listed in the index that does not
                 # have a GhostScript invocation marker. GREP is well-defined to
                 # return '1' when the file was successfully opened, but no
@@ -91,8 +97,8 @@ while read file; do
                 # Update the remote publication list, assuming that two raster
                 # pages were generated for each file.
 
-                remote_list+=("$file" "${file%.*}_Raster-0.png" \
-                        "${file%.*}_Raster-1.png")
+                remote_list+=("$remote_path" "${remote_path%.*}_Raster-0.png" \
+                        "${remote_path%.*}_Raster-1.png")
         fi
 done < "$INDEX"
 
@@ -102,11 +108,11 @@ done < "$INDEX"
 
 if [ ${#remote_list[@]} -ne 0 ]; then
         echo -e "Publishing to the Remote... (Requires York VPN access)\n"
-        rsync -vtu --ignore-missing-args -e 'ssh -q' "${remote_list[@]}" \
+        rsync -Rvtu --ignore-missing-args -e 'ssh -q' "${remote_list[@]}" \
                 "$SSH_URL"
         ret=$?
 else
-        echo "Nothing to upload!"
+        echo "Nothing to process or upload!"
         ret=0
 fi
 
