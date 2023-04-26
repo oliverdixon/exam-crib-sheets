@@ -7,14 +7,14 @@
 
 GIT_ROOT="$(git rev-parse --show-toplevel)"
 INDEX="$GIT_ROOT/publishing_index"
-remote_list=()
+PROG_NAME="$(basename "$0")"
 
 print_warning () {
-        echo -e "$(basename "$0"): Warning: $@" >&2
+        echo -e "$PROG_NAME: Warning: $@" >&2
 }
 
 print_info () {
-        echo -e "$(basename "$0"): Info: $@"
+        echo -e "$PROG_NAME: Info: $@"
 }
 
 # compress_pdf: Given a single PDF file, use GhostScript to perform an in-place
@@ -104,45 +104,56 @@ upload_files () {
         return $?
 }
 
-while read file; do
-        [[ -z $file ]] || [[ $file == \#* ]] && continue
+# process_line: Given a line from the publication index, this function performs
+# all necessary transformations to the corresponding file, printing warning and
+# informative messages where appropriate, and suitably expands the 'remote_list'
+# array.
 
-        remote_file="$GIT_ROOT/./$file"
-        file="$(realpath --relative-to=./ "$GIT_ROOT/$file")"
+process_line () {
+        local file="$(realpath --relative-to=./ "$GIT_ROOT/$1")"
+        local remote_file="$GIT_ROOT/./$1"
 
-        if [[ -f $file ]]; then
-                # We first compress each file listed in the index that does not
-                # have a GhostScript invocation marker. GREP is well-defined to
-                # return '1' when the file was successfully opened, but no
-                # matching lines were found. If GS is required, but did not
-                # execute successfully, then its return code is forwarded.
-
-                grep -qsm 1 "^%%Invocation: gs" "$file"
-                if [[ $? -eq 1 ]]; then
-                        compress_pdf "$file"
-                        if [[ $? -ne 0 ]]; then
-                                print_warning "Skipping processing of $file"
-                                continue
-                        fi
-                fi
-
-                remote_list+=("$remote_file")
-
-                # Re-generate rasters for the given file, where necessary.
-                update_raster "$file"
-
-                if [[ $? -eq 0 ]]; then
-                        # Update the remote publication list, assuming that two
-                        # raster pages were generated for each file.
-                        remote_List+="${remote_file%.*}_Raster-0.png" \
-                                "${remote_file%.*}_Raster-1.png"
-                else
-                        print_warning "Skipping rasters of $file"
-                fi
-        else
+        if ! [[ -f $file ]]; then
                 print_warning "$file was listed in the index but does not" \
-                        "exist."
+                        "exist on the file system."
+                return
         fi
+
+        # We first compress each file listed in the index that does not have a
+        # GhostScript invocation marker. GREP is well-defined to return '1' when
+        # the file was successfully opened, but no matching lines were found. If
+        # GS is required, but did not execute successfully, then its return code
+        # is forwarded.
+
+        grep -qsm 1 "^%%Invocation: gs" "$file"
+        if [[ $? -eq 1 ]]; then
+                compress_pdf "$file"
+                if [[ $? -ne 0 ]]; then
+                        print_warning "Skipping processing of $file"
+                        continue
+                fi
+        fi
+
+        remote_list+=("$remote_file")
+
+        # Re-generate rasters for the given file, where necessary.
+        update_raster "$file"
+
+        if [[ $? -eq 0 ]]; then
+                # Update the remote publication list, assuming that two raster
+                # pages were generated for each file.
+                remote_list+=("${remote_file%.*}_Raster-0.png" \
+                        "${remote_file%.*}_Raster-1.png")
+        else
+                print_warning "Skipping rasters of $file"
+        fi
+}
+
+remote_list=()
+
+while read line; do
+        [[ -z $line ]] || [[ $line == \#* ]] && continue
+        process_line "$line"
 done < "$INDEX"
 
 # Send all files specified by the remote list to the destination
