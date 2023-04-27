@@ -46,11 +46,10 @@ three things:
 * If you have any corrections, comments, or questions concerning the content
   of this repository, please contact me at <od641@york.ac.uk>.
 
-In addition to the crib sheets, I have provided a short commentary on my
-predictions for the contents of the upcoming examination for each module. These
-guesses are based wholly on the contents of the previous examinations; I do not
-have any information that is not equally available to every other student
-enrolled on this programme.
+In addition to the crib sheets, I have provided a short commentary on the
+contents of recent examinations. These may be used to extrapolate predictions
+for the topics likely to appear in the upcoming series of exams; however, a
+much more sensible approach to revision would be to understand the content well!
 
 ## Frequently Asked Questions
 
