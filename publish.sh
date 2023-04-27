@@ -2,8 +2,8 @@
 # OWD 2023
 
 # This script requires a moderately recent version of GhostScript (10+, for the
-# new C-based PDF parser) and a copy of ImageMagick with the PDF and PNG codecs
-# installed and enabled.
+# new C-based PDF parser) and a copy of GraphicsMagick with the PDF and PNG
+# codecs installed and enabled.
 
 GIT_ROOT="$(git rev-parse --show-toplevel)"
 INDEX="$GIT_ROOT/publishing_index"
@@ -58,15 +58,15 @@ update_raster () {
         # We only check the last-modified date of the first image page, since
         # the entire cluster would've been generated together.
 
-        if [[ ${RASTER_NAME}-0.png -ot $1 ]]; then
-                convert                   \
-                        -density 150      \
+        if [[ ${RASTER_NAME}_0.png -ot $1 ]]; then
+                gm convert                \
+                        -density 130      \
                         -background white \
-                        -alpha remove     \
                         -colorspace gray  \
                         -depth 4          \
-                        "$1"              \
-                        "${RASTER_NAME}.png"
+                        pdf:"$1"          \
+                        +adjoin           \
+                        png:"${RASTER_NAME}_%1d.png"
 
                 ret=$?
                 [[ $ret -eq 0 ]] && print_info "Rasterised: $1"
@@ -142,8 +142,8 @@ process_line () {
         if [[ $? -eq 0 ]]; then
                 # Update the remote publication list, assuming that two raster
                 # pages were generated for each file.
-                remote_list+=("${remote_file%.*}_Raster-0.png" \
-                        "${remote_file%.*}_Raster-1.png")
+                remote_list+=("${remote_file%.*}_Raster_0.png" \
+                        "${remote_file%.*}_Raster_1.png")
         else
                 print_warning "Skipping rasters of $file"
         fi
