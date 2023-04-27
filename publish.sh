@@ -96,8 +96,8 @@ upload_files () {
                 rsync -Rvtu "$@" "${WEB_PATH/#\~/$HOME}"
         else
 
-                print_info "Publishing to the Remote... (Requires York network" \
-                        "access)"
+                print_info "Publishing to the Remote... (Requires York"\
+                        "network access)"
                 rsync -Rvtu -e 'ssh -q' "$@" "$NET_USER@$SSH_URL:$WEB_PATH"
         fi
 
@@ -130,7 +130,7 @@ process_line () {
                 compress_pdf "$file"
                 if [[ $? -ne 0 ]]; then
                         print_warning "Skipping processing of $file"
-                        continue
+                        return
                 fi
         fi
 
