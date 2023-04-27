@@ -255,7 +255,43 @@ $a_n=2\int_{-L/2}^{L/2} f(x)\cos(2n\pi x/L)\,\mathconst{d}x/L$, and
 the sine coefficients
 $b_n=2\int_{-L/2}^{L/2} f(x)\sin(2n\pi x/L)\,\mathconst{d}x/L$. &
 %
-{} \\
+\textbf{Clairaut's Theorem}: If $f(x,y)$ and $f_x$, $f_y$, $f_{xy}$, and
+$f_{yx}$ are defined throughout an open region containing $(a,b)$, and they are
+all cont.\ at $(a,b)$, then $f_{xy}(a,b)=f_{yx}(a,b)$. \\
+%
+\hline
+%
+\textbf{GCL}: If $f(x,y)$ is a CDF, and $\vec{r}(t)=[x(t),y(t)]$ is a pair
+of diff.\ functions, then $F^\prime(t)=x^\prime(t)f_x[x(t),y(t)] +
+y^\prime(t)f_y[x(t),y(t)]$, where $F(t)=f[\vec{r}(t)]$. &
+%
+\textbf{Gradient}: For some $f(x,y,z)$,
+$\nabla f\coloneqq \partial{f}/\partial{x}\,\vec{i} +
+\partial{f}/\partial{y}\,\vec{j} + \partial{f}/\partial{z}\,\vec{k}$. If
+$\vec{r}_0$ is a point, and $\vec{u}$ is a unit vector, then the DD of $f$ is
+$D_{\vec{u}}f(\vec{r}_0)\coloneqq \lim_{h\to 0} [f(\vec{r}_0+h\vec{u}) -
+f(\vec{r}_0)]/h$. &
+%
+\textbf{Level Surface}: A \emph{level set} of a three-variable function
+$F(x,y,z)$ is defined to be $\{ (x,y,z)\in\mathbb{R}^3\,\vert\,F(x,y,z)=c \}$,
+for some constant $c\in\mathbb{R}$. \\
+%
+\hline
+%
+\textbf{Tangent Vector}: A vector is \emph{tangent} to a surface $\mathcal{S}$
+at $\vec{r}_0\in\mathcal{S}$ if it is tangent at $\vec{r}_0$ to some curve in
+$\mathcal{S}$ passing through $\vec{r}_0$. &
+%
+\textbf{Imp. Diff.}: If $y(x)$ is defined implicitly by $f(x,y)=c$, then
+$\mathconst{d}y/\mathconst{d}x = -f_x(x,y)/f_y(x,y)$.  For $F(x,y,z)=c$, then
+$(\partial z/\partial x)_y=-F_x/F_z$ and $(\partial z/\partial y)_x=-F_y/F_z$. &
+%
+\textbf{Laplacian}: The \emph{Laplacian} of $f(x,y)$ is $\Delta f \equiv
+\nabla^2 f = \partial^2 f/\partial x^2 + \partial^2 f/\partial y^2$. If
+$F(r,\theta)=f(r\cos\theta, r\sin\theta)$, then $\Delta f \equiv \nabla^2 f =
+\partial^2 F/\delta r^2 + (\partial F/\partial r)/r + (\partial^2
+F/\partial\theta^2)/r^2$. \\
+%
 \hline
 \end{tabular}
 \end{document}
