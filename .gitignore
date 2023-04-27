@@ -1,6 +1,8 @@
 *.pdf
 *.png
+
 .*.sw*
+.nfs*
 
 *.fls
 *.fdb_latexmk

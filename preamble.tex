@@ -1,9 +1,9 @@
 % Examination Crib Sheet Common Preamble
 % OWD 2023
 
-\documentclass{article}
+\documentclass[10pt]{article}
 \usepackage[a4paper, margin=2em, landscape]{geometry}
-\usepackage{array, xcolor, fancyhdr, amssymb, amsmath}
+\usepackage{array, xcolor, fancyhdr, amssymb, mathtools}
 \usepackage[en-GB]{datetime2}
 \usepackage[
         colorlinks = true,
@@ -32,11 +32,11 @@
 \pagestyle{fancy}
 \makeatletter
 \fancyhf{}
-\fancyhead[L]{\Large\textbf{\@title}}
-\fancyhead[R]{\Large Compiled by \@author\ on \today}
+\fancyhead[L]{\large\textbf{\@title}}
+\fancyhead[R]{\large Compiled by \@author\ on \today}
 \makeatother
-\fancyfoot[L]{\Large\textsc{Side \thepage}}
-\fancyfoot[R]{\Large\url{https://github.com/oliverdixon/exam-crib-sheets/tree/%
+\fancyfoot[L]{\large\textsc{Side \thepage}}
+\fancyfoot[R]{\large\url{https://github.com/oliverdixon/exam-crib-sheets/tree/%
         master/\modulename}}
 
 \renewcommand{\arraystretch}{1.2}

@@ -31,7 +31,8 @@ three things:
 
   Option (i) is not particularly difficult, and they don't require any exotic
   packages that aren't on CTAN and included in every modern TeX Live
-  distribution. If you'd prefer (ii), see:
+  distribution; a single invocation of `latexmk -pdf` in the respective
+  directory should produce a reasonable PDF document. If you'd prefer (ii), see:
   <https://www-users.york.ac.uk/~od641/exam-crib-sheets>. For convenience and
   accessibility, this link also contains rasters of each PDF for use in other
   applications e.g. MS Office.
