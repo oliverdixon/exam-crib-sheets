@@ -18,181 +18,302 @@
 \begin{tabular}{|m{.31\linewidth}|m{.31\linewidth}|m{.31\linewidth}|}
 \hline
 
-\textbf{L'H{\^ o}pital's Rule}: If $f$ and $g$ are differentiable functions at
-$x_0$, $f(x_0)=g_(x_0)=0$, and $g^\prime(x_0)\neq 0$, then $\lim_{x\to x_0}
-f(x)/g(x)=\lim_{x\to x_0} f^\prime(x)/g^\prime(x)$. &
+\textbf{L'H{\^ o}pital's Rule}:
+    If
+        $ f $ and $ g $ are differentiable functions at $ x_0 $,
+        $ f(x_0) = g_(x_0) = 0 $, and
+        $ g^\prime(x_0) \neq 0 $,
+    then
+        $ \lim_{x \to x_0} f(x) / g(x) =
+            \lim_{x \to x_0} f^\prime(x) / g^\prime(x) $. &
 
-\textbf{The IVT}: Suppose $a<b$ and $f$ is continuous on $[a,b]$.  Then, for
-every $y$ such that $\min(f(a),f(b)) < y < \max(f(a),f(b))$, there exist $x_0\in
-(a,b)$ s.t.\ $f(x_0)=y$. &
+\textbf{The IVT}:
+    Suppose $ a < b $ and $ f $ is continuous on $ [a, b] $. Then, for
+    every $ y $ such that
+        $ \min(f(a),f(b)) < y < \max(f(a),f(b))$,
+    there exist $ x_0 \in (a, b) $ s.t.\ $ f(x_0) = y $. &
 
-\textbf{The Chain Rule}: If $g$ is differentiable at $x$ and $f$ is
-differentiable at $g(x)$, then $f\circ g$ is differentiable at $x$, and $(f\circ
-g)^\prime(x)=f^\prime(g(x))g^\prime(x)$. \\
-
-\hline
-
-\textbf{The IFT}: If $f:I\to\mathbb{R}$ is continuous and strictly monotonic,
-then $f^{-1}:J\to I$ is also continuous, where $J=f(I)$ and $f^{-1}(f(x))=x$ and
-$f(f^{-1}(y))=y$. &
-
-\textbf{The MVT}: If $f:[a,b]\to\mathbb{R}$ is continuous and differentiable on
-$(a,b)$, then there exist $x_0\in (a,b)$ such that
-$f^\prime(x_0)=\left[f(b)-f(a)\right]/(b-a)$. &
-
-\textbf{Classifying CPs}: If $f:[a,b]\to\mathbb{R}$, $f^\prime$,
-$f^{\prime\prime}$ are sensibly defined, and $x_0\in (a,b)$ s.t.\ %
-$f^\prime(x_0)=0$, then $f^{\prime\prime}(x_0)>0$ means local min., and
-$f^{\prime\prime}(x_0)<0$ means local max. \\
+\textbf{The Chain Rule}:
+    If
+        $ g $ is differentiable at $ x $ and
+        $ f $ is differentiable at $ g(x) $,
+    then
+        $ f \circ g $ is differentiable at $ x $, and
+        $ (f \circ g)^\prime(x) = f^\prime(g(x)) g^\prime(x) $. \\
 
 \hline
 
-\textbf{Taylor's Theorem (1)}: If $f\in C^{N+1}(I)$ and $x\in I$, then
-$f(x)=\sum_{n=0}^N \left[f^{(n)}(x_0)(x-x_0)^n\right]/n!+1/N!  \int_{x_0}^x
-(x-t)^N f^{(N+1)}(t)\,\mathconst{d}t$. &
+\textbf{The IFT}:
+    If
+        $ f \colon I \to \mathbb{R} $ is continuous and strictly monotonic,
+    then
+        $ f^{-1} \colon J \to I$ is also continuous, where
+        $ J = f(I) $ and
+        $ f^{-1}(f(x)) = x $ and
+        $ f(f^{-1}(y)) = y $. &
 
-\textbf{Taylor's Theorem (2)}: The terms under the summation are the
-\emph{Taylor polynomial} of $f$ at $x_0$, of order $N$. The integral term is
-known as the \emph{error in integral form}. &
+\textbf{The MVT}:
+    If
+        $ f \colon [a, b] \to \mathbb{R}$ is continuous and differentiable on
+            $ (a, b) $,
+    then
+        there exist $ x_0 \in (a, b)$ such that
+        $ f^\prime(x_0) = \left[ f(b)-f(a) \right] / (b - a) $. &
 
-\textbf{Taylor's Theorem (3)}: The \emph{Lagrange form} of the error is
-$R_N(x)=\left[(x-x_0)^{N+1}f^{(N+1)(c)}\right]/(N+1)!$, for some $c$ between
-$x_0$ and $x$. \\
-
-\hline
-
-\textbf{Diff. Eq. (1)}: If $u^\prime(x)=cu(x)$, where
-$c\in\mathbb{R}\setminus\{0\}$ and $A$ is an arbitrary constant, then
-$u(x)=A\mathconst{e}^{cx}$. &
-
-\textbf{Diff. Eq. (2)}: If $u^{\prime\prime}(x)=-c^2u(x)$, then
-$A\cos(cx)+B\sin(cx)$, where $A$ and $B$ are arbitrary constants. &
-
-\textbf{Diff. Eq. (3)}: If $u^{\prime\prime}(x)=c^2u(x)$, then
-$u(x)=A\mathconst{e}^{cx}+B\mathconst{e}^{-cx}=C\cosh(cx)+D\sinh(cx)$, for arb.\
-constants $C, D$. \\
-\hline
-
-\textbf{Simple Diff. Eqs.}: A \emph{simple differential equation} has the form
-$y^\prime(x)=f(x)$, and has solutions $y=\int f(x)\, \mathconst{d}x+C$, for some
-arbitrary constant $C$. &
-
-\textbf{Separable Diff. Eqs.}: A \emph{separable differential equation} has the
-form $y^\prime(x)=f(x)/g(y)$. It has solutions $G(y)=F(x)+C$, where $F^\prime=f$
-and $G^\prime=g$. &
-
-\textbf{Integrating Factors (1)}: A first-order ODE is \emph{linear} if it has
-the form $a(x)y^\prime(x)+b(x)y+c(x)=0$. In \emph{standard form}, this is
-$y^\prime(x)=P(x)y+Q(x)=0$\ \ldots \\
-\hline
-
-\textbf{Integrating Factors (2)}: \ldots\ This can be solved to give
-$y=\left[\int Q(x)F(x)\,\mathconst{d}x+C\right]/F(x)$, where $F(x)=\exp\int
-P(x)\,\mathconst{d}x$ is the \emph{integrating factor}. &
-
-\textbf{Derivative of Arc Sine}: \smash{$\dfrac{\mathconst{d}}%
-{\mathconst{d}x}\arcsin(x)=\dfrac{1}{\sqrt{1-x^2}}$} &
-
-\textbf{Derivative of Arc Cosine}: \smash{$\dfrac{\mathconst{d}}%
-{\mathconst{d}x}\arccos(x)=\dfrac{-1}{\sqrt{1-x^2}}$} \\
+\textbf{Classifying CPs}:
+    If
+        $ f \colon [a, b] \to \mathbb{R} $,
+        $ f^\prime $, and
+        $ f^{\prime\prime} $
+        are sensibly defined, and $ x_0 \in (a, b) $ s.t.\ $f^\prime(x_0) = 0$,
+    then
+        $f^{\prime\prime}(x_0)>0$ means local min., and
+        $f^{\prime\prime}(x_0)<0$ means local max. \\
 
 \hline
 
-\textbf{Derivative of Arc Tangent}: \smash{$\dfrac{\mathconst{d}}%
-{\mathconst{d}x}\arctan(x)=\dfrac{1}{1+x^2}$} &
+\textbf{Taylor's Theorem (1)}:
+    If
+        $ f \in C^{N + 1}(I) $ and
+        $ x \in I$,
+    then
+        $ f(x) =
+            \sum_{n = 0}^N \left[
+                f^{(n)}(x_0)(x - x_0)^n
+            \right] / n! +
+            1/N! \int_{x_0}^x
+                (x - t)^N f^{(N + 1)}(t)
+                \,\mathconst{d}t$. &
 
-\textbf{Radian Measure (1)}: If $(x,y)\in\mathbb{R}^2$ with $(x,y)\neq(0,0)$,
-then there is a unique solution to $x=r\cos\theta$ and $y=r\sin\theta$ for
-$\theta\in(-\pi,\pi]$ and $r>0$. &
+\textbf{Taylor's Theorem (2)}:
+    The terms under the summation are the \emph{Taylor polynomial} of $ f $ at
+    $ x_0 $, of order $ N $. The integral term is known as the \emph{error in
+    integral form}. &
 
-\textbf{Radian Measure (2)}: If $x>0$, then $\theta=\arctan(y/x)$. If $x=0$,
-$\theta=\sgn(y)\pi/2$. If $x<0$, then $\theta=\arctan(y/x) + \pi$ if $y\geq 0$,
-or $\theta=\arctan(y/x)-\pi$ otherwise. \\
-
-\hline
-
-\textbf{Complex Circular Trigonometric Functions}: For $z\in\mathbb{C}$,
-$\sin(z)=(\mathconst{e}^{\mathconst{i}z}- \mathconst{e}^{-\mathconst{i}z})/2$,
-and $\sin(z)=(\mathconst{e}%
-^{\mathconst{i}z}+\mathconst{e}^{-\mathconst{i}z})/2$. Therefore,
-$\tan(z)=\mathconst{i}(\mathconst{e}^{-\mathconst{i}z}-\mathconst{e}%
-^{\mathconst{i}z})/(\mathconst{e}^{-\mathconst{i}z}+\mathconst{e}%
-^{\mathconst{i}z})$. &
-
-\textbf{Complex Hyperbolic Trigonometric Functions}: For $z\in\mathbb{C}$,
-$\sinh(z)=(\mathconst{e}^z-\mathconst{e}^{-z})/2$,
-$\cosh(z)=(\mathconst{e}^z+\mathconst{e}^{-z})/2$, and
-$\tanh(z)=\sinh(z)/\cosh(z)$. &
-
-\textbf{Trigonometric Identities (Hyperbolic Form)}: For $x$ and $y$,
-$\sinh(x+y)=\sinh(x)\cosh(y) + \cosh(x)\sinh(y)$, and
-$\cosh(x+y)=\cosh(x)\cosh(y) + \sinh(x)\sinh(y)$. \\
-
-\hline
-\textbf{2nd-Order ODE (MD.1)}: Consider $R(y^{\prime\prime},y^\prime,x)=0$. To
-solve for $y(x)$, we define a new dependent variable as the derivative of the
-old dependent variable &
-
-\textbf{\ldots\ (MD.2)}: We then solve the resulting first-order ODE, and
-integrate the solution. This works in cases of \emph{missing dependent
-variables}. &
-
-\textbf{2nd-Order ODE (MI.1)}: Consider $R(y^{\prime\prime},y^\prime,y)=0$. To
-solve this \emph{autonomous ODE}, we first define a new independent variable as
-the old dependent variable. \\
+\textbf{Taylor's Theorem (3)}:
+    The \emph{Lagrange form} of the error is
+        $ R_N(x) = \left[
+            (x - x_0)^{N + 1} f^{(N + 1)(c)}
+        \right] / (N+1)!$,
+    for some $ c $ between $ x_0 $ and $ x $. \\
 
 \hline
 
-\textbf{\ldots\ (MI.2)}: Define a dependent variable as the derivative of the
-old dependent variable. Rewrite the expression in terms of these new variables,
-and solve. &
+\textbf{Diff. Eq. (1)}:
+    If
+        $ u^\prime(x) = cu(x)$, where
+        $ c \in \mathbb{R} \setminus \{ 0 \} $ and
+        $A$ is an arbitrary constant,
+    then
+            $ u(x) = A \mathconst{e}^{cx} $. &
 
-\textbf{\ldots\ (MI.3)}: Rewrite the solution in terms of the original
-variables, and solve the resulting first-order differential equation. &
+\textbf{Diff. Eq. (2)}:
+    If
+        $ u^{\prime\prime}(x) = -c^2u(x)$,
+    then
+        $ A \cos(cx) + B \sin(cx) $, where
+        $ A $ and $ B $ are arbitrary constants. &
 
-\textbf{2nd-Order ODE (HC.1)}: Consider a \emph{homogeneous linear ODE} in
-$y(x)$ with constant coeffs. Take an ansatz of $\mathconst{e}^{\lambda x}$,
-substitute this into the auxiliary equation, and solve. \\
-
-\hline
-
-\textbf{\ldots\ (HC.2)}: If $\lambda\in\mathbb{R}$ is a root of the aux.  eq.,
-then $\mathconst{e}^{\lambda x}$ is a solution to the ODE.  If
-$\alpha\pm\mathconst{i}\beta\in\mathbb{C}$ are roots, then
-$\mathconst{e}^{\alpha x}\cos\beta x$ and $\mathconst{e}^{\alpha x}\sin\beta x$
-are ODE solutions. &
-
-\textbf{\ldots\ (HC.3)}: If $\lambda$ is an $m$-times repeated root of the aux.
-eq., with $m\leq n$, then multiplying these solutions by powers of $x$, up to
-$x^{m-1}$, gives more solutions. &
-
-\textbf{\ldots\ (HC.4)}: The general solution of the ODE is an arbitrary linear
-combination of these real and complex solutions. \\
+\textbf{Diff. Eq. (3)}:
+    If
+        $ u^{\prime\prime}(x) = c^2 u(x) $,
+    then
+        $ u(x) =
+            A \mathconst{e}^{cx} + B\mathconst{e}^{-cx} =
+            C \cosh(cx) + D\sinh(cx)$,
+        for arb.\ constants $ C, D $. \\
 
 \hline
 
-\textbf{2nd-Order ODE (IL.1)}: For an \emph{inhomogeneous linear ODE}, first
-find the general solution of the corresponding homogeneous equation. &
+\textbf{Simple Diff. Eqs.}:
+    A \emph{simple differential equation} has the form
+        $ y^\prime(x) = f(x) $,
+    and has solutions
+        $ y = \int f(x)
+            \, \mathconst{d}
+        + C $,
+    for some arbitrary constant $ C $. &
 
-\textbf{\ldots\ (IL.2)}: Find one solution of the inhomogeneous ODE, and
-sum it with the solution to the homogeneous ODE for the general solution. &
+\textbf{Separable Diff. Eqs.}:
+    A \emph{separable differential equation} has the form
+        $ y^\prime(x) = f(x) / g(y) $.
+    It has solutions $ G(y) = F(x) + C$, where
+        $ F^\prime = f $ and
+        $ G^\prime = g $. &
 
-\textbf{2nd-Order ODE (IC.1)}: For an \emph{inhomogeneous linear ODE with
-constant coeffs.}, take an ansatz which is of the same type as the RHS, with
-undetermined coeffs. \\
+\textbf{Integrating Factors (1)}:
+    A first-order ODE is \emph{linear} if it has the form
+        $ a(x)y^\prime(x) + b(x)y + c(x) = 0$.
+    In \emph{standard form}, this is
+        $y^\prime(x) = P(x)y + Q(x) = 0$\ %
+    \ldots \\
 
 \hline
 
-\textbf{\ldots\ (IC.2)}: If this ansatz ``overlaps'' with the general
-solution of the homogeneous ODE, multiply that part of the guess by $x$. &
+\textbf{Integrating Factors (2)}: \ldots\ %
+    This can be solved to give
+        $ y = \left[
+            \int Q(x) F(x)
+            \,\mathconst{d}x
+        + C\right] / F(x)$,
+    where
+        $ F(x) = \exp
+            \int P(x)
+            \,\mathconst{d}x $
+    is the \emph{integrating factor}. &
 
-\textbf{\ldots\ (IC.3)}: Insert this into the ODE and determine the coeffs.
-Substitute these values into the ansatz, and take the sum of the particular and
-general solution. &
+\textbf{Derivative of Arc Sine}:
+    \smash{$
+        \dfrac{\mathconst{d}}{\mathconst{d}x} \arcsin(x) =
+        \dfrac{1}{\sqrt{1-x^2}}
+    $} &
 
-\textbf{2nd-Order ODE (CP.1)}: For a system of coupled ODEs in $x(t)$ and
-$y(t)$, find $\ddot{x}$ and $\dot{y}$. Use $\dot{y}$ to eliminate $\dot{y}$, and
-use $\dot{x}$ to eliminate $y$ in the ODE. \\
+\textbf{Derivative of Arc Cosine}:
+    \smash{$
+        \dfrac{\mathconst{d}}{\mathconst{d}x} \arccos(x) =
+        \dfrac{-1}{\sqrt{1 - x^2}}
+    $} \\
+
+\hline
+
+\textbf{Derivative of Arc Tangent}:
+    \smash{$
+        \dfrac{\mathconst{d}}{\mathconst{d}x} \arctan(x) =
+        \dfrac{1}{1+x^2}
+    $} &
+
+\textbf{Radian Measure (1)}:
+    If
+        $ (x, y) \in \mathbb{R}^2 $ with
+        $ (x, y) \neq (0, 0) $,
+    then
+        there is a unique solution to
+        $ x = r \cos \theta $ and
+        $ y = r \sin \theta$ for
+        $ \theta \in (-\pi, \pi] $ and $ r > 0 $. &
+
+\textbf{Radian Measure (2)}:
+    If $ x > 0 $, then
+        $ \theta = \arctan(y / x)$.
+    If $ x = 0 $,
+        $ \theta = \sgn(y) \pi / 2$.
+    If $ x < 0 $, then
+        $ \theta = \arctan(y / x) + \pi $ if $ y \geq 0$,
+        or $ \theta = \arctan(y / x) - \pi$ otherwise. \\
+
+\hline
+
+\textbf{Complex Circular Trigonometric Functions}:
+    For $ z \in \mathbb{C} $,
+        $ \sin(z) = (
+            \mathconst{e}^{\mathconst{i}z} -
+            \mathconst{e}^{-\mathconst{i}z}
+        ) / 2$, and
+        $ \sin(z) = (
+            \mathconst{e}^{\mathconst{i}z} +
+            \mathconst{e}^{-\mathconst{i}z}
+        ) / 2$. Therefore,
+        $ \tan(z) = \mathconst{i}(
+            \mathconst{e}^{-\mathconst{i}z} -
+            \mathconst{e}^{\mathconst{i}z}
+        ) / (
+            \mathconst{e}^{-\mathconst{i}z} +
+            \mathconst{e}^{\mathconst{i}z}
+        ) $. &
+
+\textbf{Complex Hyperbolic Trigonometric Functions}:
+    For $ z \in \mathbb{C} $,
+        $ \sinh(z) = (\mathconst{e}^z - \mathconst{e}^{-z}) / 2$,
+        $ \cosh(z) = (\mathconst{e}^z + \mathconst{e}^{-z}) / 2$, and
+        $ \tanh(z) = \sinh(z) / \cosh(z)$. &
+
+\textbf{Trigonometric Identities (Hyperbolic Form)}:
+    For $ x $ and $ y $,
+        $ \sinh(x + y) = \sinh(x) \cosh(y) + \cosh(x) \sinh(y)$, and
+        $ \cosh(x + y) = \cosh(x) \cosh(y) + \sinh(x) \sinh(y)$. \\
+
+\hline
+
+\textbf{2nd-Order ODE (MD.1)}:
+    Consider $ R(y^{\prime\prime}, y^\prime, x) = 0 $. To solve for $ y(x) $, we
+    define a new dependent variable as the derivative of the old dependent
+    variable. &
+
+\textbf{\ldots\ (MD.2)}:
+    We then solve the resulting first-order ODE, and integrate the solution.
+    This works in cases of \emph{missing dependent variables}. &
+
+\textbf{2nd-Order ODE (MI.1)}:
+    Consider $ R(y^{\prime\prime}, y^\prime, y) = 0$. To solve this
+    \emph{autonomous ODE}, we first define a new independent variable as the old
+    dependent variable. \\
+
+\hline
+
+\textbf{\ldots\ (MI.2)}:
+    Define a dependent variable as the derivative of the old dependent variable.
+    Rewrite the expression in terms of these new variables, and solve. &
+
+\textbf{\ldots\ (MI.3)}:
+    Rewrite the solution in terms of the original variables, and solve the
+    resulting first-order differential equation. &
+
+\textbf{2nd-Order ODE (HC.1)}:
+    Consider a \emph{homogeneous linear ODE} in $ y(x) $ with constant coeffs.
+    Take an ansatz of $ \mathconst{e}^{\lambda x} $, substitute this into the
+    auxiliary equation, and solve. \\
+
+\hline
+
+\textbf{\ldots\ (HC.2)}:
+    If
+        $ \lambda \in \mathbb{R} $ is a root of the aux. eq.,
+    then
+        $ \mathconst{e}^{\lambda x} $ is a solution to the ODE.
+    If
+        $ \alpha \pm \mathconst{i} \beta \in \mathbb{C} $ are roots,
+    then
+        $ \mathconst{e}^{\alpha x} \cos \beta x $ and
+        $ \mathconst{e}^{\alpha x} \sin \beta x $
+        are ODE solutions. &
+
+\textbf{\ldots\ (HC.3)}:
+    If $ \lambda $ is an $m$-times repeated root of the aux. eq., with
+    $ m \leq n $, then multiplying these solutions by powers of $ x $, up to
+    $ x^{m - 1} $, gives more solutions. &
+
+\textbf{\ldots\ (HC.4)}:
+    The general solution of the ODE is an arbitrary linear combination of these
+    real and complex solutions. \\
+
+\hline
+
+\textbf{2nd-Order ODE (IL.1)}:
+    For an \emph{inhomogeneous linear ODE}, first find the general solution of
+    the corresponding homogeneous equation. &
+
+\textbf{\ldots\ (IL.2)}:
+    Find one solution of the inhomogeneous ODE, and sum it with the solution to
+    the homogeneous ODE for the general solution. &
+
+\textbf{2nd-Order ODE (IC.1)}:
+    For an \emph{inhomogeneous linear ODE with constant coeffs.}, take an ansatz
+    which is of the same type as the RHS, with undetermined coeffs. \\
+
+\hline
+
+\textbf{\ldots\ (IC.2)}:
+    If this ansatz ``overlaps'' with the general solution of the homogeneous
+    ODE, multiply that part of the guess by $ x $. &
+
+\textbf{\ldots\ (IC.3)}:
+    Insert this into the ODE and determine the coeffs. Substitute these values
+    into the ansatz, and take the sum of the particular and general solution. &
+
+\textbf{2nd-Order ODE (CP.1)}:
+    For a system of coupled ODEs in $ x(t) $ and $ y(t) $, find $ \ddot{x} $ and
+    $ \dot{y} $. Use $ \dot{y} $ to eliminate $ \dot{y} $, and use $ \dot{x} $
+    to eliminate $ y $ in the ODE. \\
 
 \hline
 \end{tabular}
@@ -229,22 +350,30 @@ use $\dot{x}$ to eliminate $y$ in the ODE. \\
 \hline
 
 \textbf{Periodic Extensions}:
-    If $f \colon [-\pi, \pi) \to \mathbb{R} $, then its
-    \emph{periodic extension} $ \tilde{f} \colon \mathbb{R} \to \mathbb{R}$ is
-    defined by $ \tilde{f}(x + 2\pi k) \coloneqq f(x)$ for $ k \in \mathbb{Z} $
-    and $ -\pi \leq x < \pi$. &
+    If
+        $ f \colon [-\pi, \pi) \to \mathbb{R} $,
+    then its \emph{periodic extension}
+        $ \tilde{f} \colon \mathbb{R} \to \mathbb{R}$ is defined by
+            $ \tilde{f}(x + 2\pi k) \coloneqq f(x)$ for
+            $ k \in \mathbb{Z} $ and
+            $ -\pi \leq x < \pi$. &
 
 \textbf{FCT (1)}:
-    If $ f \colon [-\pi, \pi] \to \mathbb{R} $ is a PWCD$ {}^\dagger $ function,
-    and $ \tilde{f} \colon \mathbb{R} \to \mathbb{R}$ is its $ 2\pi $-PE, then
-    at $ x \in \mathbb{R} $, the FS of $ f $ converges to
+    If
+        $ f \colon [-\pi, \pi] \to \mathbb{R} $ is a PWCD${}^\dagger$ function,
+        and $ \tilde{f} \colon \mathbb{R} \to \mathbb{R}$ is its $ 2\pi $-PE,
+    then
+        at $ x \in \mathbb{R} $, the FS of $ f $ converges to
         $ \lim_{N \to \infty}
             S_N(x) = S(x) = [
                 \tilde{f}(x^+) + \tilde{f}(x^-)
             ] / 2 $. &
 
 \textbf{FCT (2)}:
-    If $ \tilde{f} $ is continuous at $ x $, then $ S(x) = \tilde{f}(x) $.
+    If
+        $ \tilde{f} $ is continuous at $ x $,
+    then
+        $ S(x) = \tilde{f}(x) $.
 
     [\hspace{1pt} $ {}^\dagger $ Piecewise continuously differentiable
     function.] \\
@@ -252,8 +381,11 @@ use $\dot{x}$ to eliminate $y$ in the ODE. \\
 \hline
 
 \textbf{PT}:
-    If $ f \colon [-\pi, \pi] \to \mathbb{R} $ is a PWCD with Fourier
-    coefficients $ a_0 $, $ a_n $, and $ b_n $ for $ n \in \mathbb{N} $, then
+    If
+        $ f \colon [-\pi, \pi] \to \mathbb{R} $ is a PWCD with Fourier
+            coefficients $ a_0 $, $ a_n $, and $ b_n $
+            for $ n \in \mathbb{N} $,
+    then
         $ \int_{-\pi}^\pi
             f^2(x)
             \,\mathconst{d}x/\pi
@@ -304,15 +436,23 @@ use $\dot{x}$ to eliminate $y$ in the ODE. \\
             \,\mathconst{d}x / L$. &
 
 \textbf{Clairaut's Theorem}:
-    If $ f(x,y) $ and $ f_x $, $ f_y $, $ f_{xy} $, and $ f_{yx} $ are defined
-    throughout an open region containing $ (a, b) $, and they are all cont.\ at
-    $ (a, b) $, then $ f_{xy}(a, b) = f_{yx}(a, b) $. \\
+    If
+        $ f(x,y) $ and
+        $ f_x $,
+        $ f_y $,
+        $ f_{xy} $, and
+        $ f_{yx} $ are defined throughout an open region containing $ (a, b) $,
+        and they are all cont.\ at $ (a, b) $,
+    then
+        $ f_{xy}(a, b) = f_{yx}(a, b) $. \\
 
 \hline
 
 \textbf{GCL}:
-    If $ f(x,y) $ is a CDF, and $\vec{r}(t) = [x(t), y(t)] $ is a pair of
-    diff.\ functions, then
+    If
+        $ f(x,y) $ is a CDF, and
+        $\vec{r}(t) = [x(t), y(t)] $ is a pair of diff.\ functions,
+    then
         $ F^\prime(t) =
             x^\prime(t) f_x[x(t), y(t)] +
             y^\prime(t) f_y[x(t), y(t)] $,
@@ -323,8 +463,10 @@ use $\dot{x}$ to eliminate $y$ in the ODE. \\
         $ \nabla f \coloneqq \partial f / \partial x\,\vec{i} +
             \partial f / \partial y\,\vec{j} +
             \partial f / \partial z\,\vec{k} $.
-    If $ \vec{r}_0 $ is a point, and $ \vec{u} $ is a unit vector, then the DD
-    of $ f $ is
+    If
+        $ \vec{r}_0 $ is a point,
+        and $ \vec{u} $ is a unit vector
+    then the DD of $ f $ is
         $ D_{\vec{u}} f(\vec{r}_0) \coloneqq
             \lim_{h \to 0} [f(\vec{r}_0+h\vec{u}) - f(\vec{r}_0)]/h$. &
 
@@ -341,7 +483,9 @@ use $\dot{x}$ to eliminate $y$ in the ODE. \\
     curve in $ \mathcal{S} $ passing through $ \vec{r}_0 $. &
 
 \textbf{Imp. Diff.}:
-    If $ y(x) $ is defined implicitly by $ f(x,y) = c $, then
+    If
+        $ y(x) $ is defined implicitly by $ f(x,y) = c $
+    then
         $ \mathconst{d}y / \mathconst{d}x = -f_x(x,y) / f_y(x,y) $.
     For $F(x,y,z)=c$, then
         $ (\partial z / \partial x)_y = -F_x / F_z $ and
@@ -351,7 +495,9 @@ use $\dot{x}$ to eliminate $y$ in the ODE. \\
     The \emph{Laplacian} of $f(x,y)$ is
         $ \Delta f \equiv \nabla^2 f =
             \partial^2 f / \partial x^2 + \partial^2 f / \partial y^2 $.
-    If $ F(r, \theta) = f(r \cos \theta, r \sin \theta) $, then
+    If
+        $ F(r, \theta) = f(r \cos \theta, r \sin \theta) $,
+    then
         $ \Delta f \equiv \nabla^2 f =
             \partial^2 F / \partial r^2 + (\partial F/\partial r)/r +
             (\partial^2 F / \partial \theta^2) / r^2$. \\
@@ -372,18 +518,22 @@ use $\dot{x}$ to eliminate $y$ in the ODE. \\
 
 \textbf{Fubini's Theorem}:
     Let $ f : R \to \mathbb{R} $ be cont., with $ R \subset \mathbb{R}^2 $.
-    If $R$ is T1, then
-    $ \iint_R f \,\mathconst{d} A = 
-        \int_a^b
-            \int_{\varphi_1(x)}^{\varphi_2(x)}
-                f(x,y)\,\mathconst{d}y
-            \,\mathconst{d}x$.
-    If $ R $ is T2, then
-    $ \iint_R f \,\mathconst{d}A = 
-        \int_c^d
-            \int_{\psi_1(y)}^{\psi_2(y)}
-                f(x,y) \,\mathconst{d}x
-            \,\mathconst{d}y$. &
+    If
+        $R$ is T1,
+    then
+        $ \iint_R f \,\mathconst{d} A =
+            \int_a^b
+                \int_{\varphi_1(x)}^{\varphi_2(x)}
+                    f(x,y)\,\mathconst{d}y
+                \,\mathconst{d}x$.
+    If
+        $ R $ is T2,
+    then
+        $ \iint_R f \,\mathconst{d}A =
+            \int_c^d
+                \int_{\psi_1(y)}^{\psi_2(y)}
+                    f(x,y) \,\mathconst{d}x
+                \,\mathconst{d}y$. &
 
 \textbf{Centroid}:
     The \emph{centroid} of $ R \subset \mathbb{R}^2 $ is the point
