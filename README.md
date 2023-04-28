@@ -9,8 +9,9 @@ continue reading.
 
 ## Index of Sheets
 
- * Year 1: Calculus [*In Progress*, Exam: 25th May, 13:30--16:30, F/CENHL]
- * Year 1: Algebra [*In Progress*, Exam: 2nd June, 13:30--16:00, F/CENHL]
+ * Year 1: Calculus [*Complete, subject to minor corrections*. Exam: 25th May,
+   13:30--16:30, F/CENHL]
+ * Year 1: Algebra [*In Progress*. Exam: 2nd June, 13:30--16:00, F/CENHL]
 
 ## Things to Know
 
