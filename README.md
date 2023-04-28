@@ -16,11 +16,10 @@ continue reading.
 ## Things to Know
 
 These documents are intended to pack as much information as possible onto two
-sides of A4, in line with the
-[https://maths.york.ac.uk/moodle/mod/forum/discuss.php?d=53253](Departmental
-regulations) regarding the use of crib sheets in examinations. Thus, they may,
-from time to time, break standard typographical practice in favour of
-practicality.
+sides of A4, in line with the [Departmental
+regulations](https://maths.york.ac.uk/moodle/mod/forum/discuss.php?d=53253)
+regarding the use of crib sheets in examinations. Thus, they may, from time to
+time, break standard typographical practice in favour of practicality.
 
 Should you wish to use these sheets for your own exploits, you ought to know
 three things:
@@ -71,7 +70,7 @@ Please see the LICENSE file.
 
 **Q**: What are the files under "publishing/"?
 
-**A**: They are a small collection of Bash scripts to assist in the publication
+**A**: They form a small collection of Bash scripts to assist in the publication
 of the crib sheets. These programs can automatically compile, compress,
 rasterise, organise, and publish documents enumerated by the publication index.
 Alas, unless you know my University password and have a recent two-factor
