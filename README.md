@@ -16,9 +16,11 @@ continue reading.
 ## Things to Know
 
 These documents are intended to pack as much information as possible onto two
-sides of A4, in line with the Departmental regulations on the use of crib sheets
-in examinations. Thus, they may, from time to time, break standard typographical
-practice in favour of practicality.
+sides of A4, in line with the
+[https://maths.york.ac.uk/moodle/mod/forum/discuss.php?d=53253](Departmental
+regulations) regarding the use of crib sheets in examinations. Thus, they may,
+from time to time, break standard typographical practice in favour of
+practicality.
 
 Should you wish to use these sheets for your own exploits, you ought to know
 three things:
