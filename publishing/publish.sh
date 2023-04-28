@@ -6,7 +6,7 @@
 # codecs installed and enabled.
 
 GIT_ROOT="$(git rev-parse --show-toplevel)"
-INDEX="$GIT_ROOT/publishing_index"
+INDEX="$GIT_ROOT/publishing/index"
 PROG_NAME="$(basename "$0")"
 
 print_warning () {

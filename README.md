@@ -67,13 +67,13 @@ confirms this:
 available on my University HTTP instance, is published under the MIT Licence.
 Please see the LICENSE file.
 
-**Q**: What is "publish.sh"?
+**Q**: What are the files under "publishing/"?
 
-**A**: It is a simple Bash script that compresses PDFs, where necessary, and
-uploads them over SSH to my University's web server. The "publishing\_index"
-file is a list of all PDF documents that should be subject to this process.
-Unless you know my University password and have a recent two-factor
-authentication code, neither of these files will be very useful to you ;)
+**A**: They are a small collection of Bash scripts to assist in the publication
+of the crib sheets. These programs can automatically compile, compress,
+rasterise, organise, and publish documents enumerated by the publication index.
+Alas, unless you know my University password and have a recent two-factor
+authentication code, none of functions will be very useful to you ;)
 
 **Q**: Why have I [OD] made these resources public?
 
