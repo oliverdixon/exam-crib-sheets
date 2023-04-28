@@ -1,6 +1,4 @@
 % Calculus Examination Crib Sheet
-% INCOMPLETE: SEE TODO MARKERS
-
 % OWD 2023
 
 \input{../preamble.tex}
@@ -517,15 +515,15 @@
     \}$. &
 
 \textbf{Fubini's Theorem}:
-    Let $ f : R \to \mathbb{R} $ be cont., with $ R \subset \mathbb{R}^2 $.
+    Let $ f \colon R \to \mathbb{R} $ be cont., with $ R \subset \mathbb{R}^2 $.
     If
-        $R$ is T1,
+        $ R $ is T1,
     then
         $ \iint_R f \,\mathconst{d} A =
             \int_a^b
                 \int_{\varphi_1(x)}^{\varphi_2(x)}
                     f(x,y)\,\mathconst{d}y
-                \,\mathconst{d}x$.
+                \,\mathconst{d}x $.
     If
         $ R $ is T2,
     then
@@ -533,7 +531,7 @@
             \int_c^d
                 \int_{\psi_1(y)}^{\psi_2(y)}
                     f(x,y) \,\mathconst{d}x
-                \,\mathconst{d}y$. &
+                \,\mathconst{d}y $. &
 
 \textbf{Centroid}:
     The \emph{centroid} of $ R \subset \mathbb{R}^2 $ is the point
@@ -544,10 +542,8 @@
 
 \hline
 
-\textbf{Jacobian}:
-    % TODO
-    %\smash{
-    {$%
+\textbf{The Jacobian}:
+    \smash{$
         J \coloneqq \det \left(
             \begin{array}{cc}
                 \partial x/\partial u &
@@ -555,14 +551,112 @@
                 \partial y/\partial u &
                 \partial y/\partial v
             \end{array}
-        \right)%
+        \right)
     $} &
 
-\textbf{TODO} &
+\textbf{Double Integral Transform (1)}:
+    If
+        $ x(u, v) $ and
+        $ y(u, v) $ are CDFs,
+        $ f(x, y) $ is cont.,
+        $ R \subset \mathbb{R}^2 $, and
+        $ \mathcal{S} $ is in the $ (u, v) $-plane that maps one-to-one with
+            $ R $,
+    then \ldots&
 
-\textbf{TODO} \\
+\textbf{Double Integral Transform (2)}: \ldots\ %
+    change of variables can be achieved with the double integral identity
+    $ \iint_R f(x, y)
+        \,\mathconst{d}x \,\mathconst{d}y = $
+    $ \iint_\mathcal{S}
+        f[ x(u, v), y(u, v) ]\,
+        \vert J(u, v) \vert
+        \,\mathconst{d}u\,\mathconst{d}v $. \\
+
+\hline
+
+\textbf{Local Extrema}:
+    A function $ f \colon \mathbb{R}^2 \to \mathbb{R} $ has a \emph{local
+    minimum} at $ (x_0, y_0) $ if $ f(x_0, y_0) \leq f(x, y) $ for all $ (x, y)
+    $ in some disc centered at $ ( x_0, y_0 ) $. &
+
+\textbf{Stationary and Saddle Points}:
+    If
+        $ \nabla f(x_0, y_0) = 0 $,
+    then
+        $ (x_0, y_0) $ is a \emph{stationary point}.
+    If $ (x_0, y_0) $ is a stationary point, but not an extremum, then it is a
+    \emph{saddle point}. &
+
+\textbf{The Hessian}:
+    \smash{$
+        H(x, y) \coloneqq \left(
+            \begin{array}{cc}
+                f_{xx}(x, y) & f_{xy}(x, y) \\
+                f_{yx}(x, y) & f_{yy}(x, y)
+            \end{array}
+        \right)
+    $} \\
+
+\hline
+
+\textbf{Classifying Stationary Points (1)}:
+    Let $ f(x, y) $ be a cont.\ twice-diff.\ function, and suppose that
+    it has a stationary point at $ (x_0, y_0) $ with discriminant $ \Delta =
+    \Delta (x_0, y_0) $ &
+
+\textbf{Classifying Stationary Points (2)}:
+    If
+        $ \Delta > 0 $,
+    then
+        $ f_{xx}(x_0, y_0) > 0 $: local min. at $ (x_0, y_0) $, and
+        $ f_{xx}(x_0, y_0) < 0 $: local max.
+    Alternatively, $ \Delta < 0 $ implies a saddle point. &
+
+\textbf{CS Points}:
+    A point $ (x_0, y_0) \in \mathcal{C} $ is a \emph{constrained stationary
+    point} of $ f $ if
+        $ D_{\vec{u}}f(x_0, y_0) =
+            \vec{u} \cdot \nabla f(x_0, y_0) =
+            0 $
+        holds for all vectors $ \vec{u} $ tangent to $ \mathcal{C} $ at
+            $ (x_0, y_0) $. \\
 
 \hline
 \end{tabular}
+
+\vfill
+\begin{center}
+    Oh, Calculus; Oh, Calculus,
+    How tough are both your branches.
+    Oh, Calculus; Oh, Calculus,
+    To pass what are my chances?
+    Derivatives I cannot take,
+    At integrals my fingers shake.
+    Oh, Calculus; Oh, Calculus,
+    How tough are both your branches.
+    Oh, Calculus; Oh, Calculus,
+    Your theorems I can't master.
+    Oh, Calculus; Oh, Calculus,
+    My Proofs are a disaster.
+    You pull a trick out of the air,
+    Or find a reason, God knows where.
+    Oh, Calculus; Oh, Calculus,
+    Your theorems I can't master.
+    Oh, Calculus; Oh, Calculus,
+    My limit I am reaching.
+    Oh, Calculus; Oh, Calculus,
+    For mercy I'm beseeching.
+    My grades do not approach a B,
+    They're just an epsilon from D.
+    Oh, Calculus; Oh, Calculus,
+    My limit I am reaching.
+\end{center}
+\begin{flushright}
+    --- Denis Gannon,
+        ``\href{https://web.math.utk.edu/~vasili/va/files/oh\_calculus.html/}%
+        {\textit{A Calculus Carol}}''
+\end{flushright}
+\vspace{-1em}
 \end{document}
 
