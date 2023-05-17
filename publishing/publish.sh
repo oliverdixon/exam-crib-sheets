@@ -80,7 +80,7 @@ update_raster () {
 # can do a local copy with rsync. Otherwise, rsync-over-SSH is used.
 
 upload_files () {
-        local WEB_PATH="~/web/exam-crib-sheets"
+        local WEB_PATH="web/exam-crib-sheets"
         local SSH_URL="maxwell.york.ac.uk"
         local NET_DOMAIN="its.york.ac.uk"
         local NET_USER="od641"
