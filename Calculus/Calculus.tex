@@ -19,7 +19,7 @@
 \textbf{L'H{\^ o}pital's Rule}:
     If
         $ f $ and $ g $ are differentiable functions at $ x_0 $,
-        $ f(x_0) = g_(x_0) = 0 $, and
+        $ f(x_0) = g(x_0) = 0 $, and
         $ g^\prime(x_0) \neq 0 $,
     then
         $ \lim_{x \to x_0} f(x) / g(x) =
@@ -143,7 +143,7 @@
     A first-order ODE is \emph{linear} if it has the form
         $ a(x)y^\prime(x) + b(x)y + c(x) = 0$.
     In \emph{standard form}, this is
-        $y^\prime(x) = P(x)y + Q(x) = 0$\ %
+        $ y^\prime(x) + P(x)y + Q(x) = 0 $\ %
     \ldots \\
 
 \hline
@@ -340,10 +340,12 @@
             f(x)\sin nx
             \,\mathconst{d}x / \pi $. &
 
-\textbf{FS Cautions}:
-    Check for any symmetries of the function, or suggestions of a constant
-    equalling zero. For the cosine terms $ a_n $, $ n = 0,1,2,\ldots $ For sine
-    terms $ b_n $, $ n = 1,2,\ldots $ \\
+\textbf{Tangent Lines to Curves}:
+    If
+        $ \vec{r}_0 $ is lying on the level curve $ f(x,y) = c $,
+    then
+        $ \nabla f(\vec{r_0}) \cdot (\vec{r} - \vec{r}_0) $.
+    In three variables, this also applies to three-space planes. \\
 
 \hline
 
@@ -407,7 +409,7 @@
         $ S(x) = \sum_{n = -\infty}^\infty
             c_n \mathconst{e}^{\mathconst{i}nx}$,
         where
-            $ c_n = \int_{-\infty}^\infty
+            $ c_n = \int_{-\pi}^\pi
                 f(x) \mathconst{e}^{-\mathconst{i}nx}
                 \,\mathconst{d}x / (2 \pi) $
         and $ \overline{c_n} = c_{-n} $ with
@@ -475,9 +477,14 @@
 \hline
 
 \textbf{Tangent Vector}:
-    A vector is \emph{tangent} to a surface $ \mathcal{S} $ at
-    $ \vec{r}_0 \in \mathcal{S} $ if it is tangent at $ \vec{r}_0 $ to some
-    curve in $ \mathcal{S} $ passing through $ \vec{r}_0 $. &
+    Let $ \mathcal{S}$ be the level surface of $ F \colon \mathbb{R}^3 \to
+    \mathbb{R} $ passing through $ \vec{r}_0 $.
+    If
+        $ \vec{u} $ is a vector tangent to $ \mathcal{S} $ at
+        $ \vec{r}_0 $,
+    then
+        $ 0 = \vec{u} \cdot \nabla F(\vec{r}_0) $. &
+
 
 \textbf{Imp. Diff.}:
     If
@@ -564,7 +571,7 @@
     then \ldots&
 
 \textbf{Double Integral Transform (2)}: \ldots\ %
-    change of variables can be achieved with the double integral identity
+    change of variables can be achieved with the double integral result::
     $ \iint_R f(x, y)
         \,\mathconst{d}x \,\mathconst{d}y = $
     $ \iint_\mathcal{S}
@@ -587,14 +594,14 @@
     If $ (x_0, y_0) $ is a stationary point, but not an extremum, then it is a
     \emph{saddle point}. &
 
-\textbf{The Hessian}:
+\textbf{Hessian}:
     \smash{$
-        H(x, y) \coloneqq \left(
+        \vert H(x, y) \vert \coloneqq \left\vert \left(
             \begin{array}{cc}
                 f_{xx}(x, y) & f_{xy}(x, y) \\
                 f_{yx}(x, y) & f_{yy}(x, y)
             \end{array}
-        \right)
+        \right) \right\vert \eqqcolon \Delta
     $} \\
 
 \hline
