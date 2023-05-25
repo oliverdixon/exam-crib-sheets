@@ -629,40 +629,43 @@
             $ (x_0, y_0) $. \\
 
 \hline
-\end{tabular}
 
-\vfill
-\begin{center}
-    Oh, Calculus; Oh, Calculus,
-    How tough are both your branches.
-    Oh, Calculus; Oh, Calculus,
-    To pass what are my chances?
-    Derivatives I cannot take,
-    At integrals my fingers shake.
-    Oh, Calculus; Oh, Calculus,
-    How tough are both your branches.
-    Oh, Calculus; Oh, Calculus,
-    Your theorems I can't master.
-    Oh, Calculus; Oh, Calculus,
-    My Proofs are a disaster.
-    You pull a trick out of the air,
-    Or find a reason, God knows where.
-    Oh, Calculus; Oh, Calculus,
-    Your theorems I can't master.
-    Oh, Calculus; Oh, Calculus,
-    My limit I am reaching.
-    Oh, Calculus; Oh, Calculus,
-    For mercy I'm beseeching.
-    My grades do not approach a B,
-    They're just an epsilon from D.
-    Oh, Calculus; Oh, Calculus,
-    My limit I am reaching.
-\end{center}
-\begin{flushright}
-    --- Denis Gannon,
-        ``\href{https://web.math.utk.edu/~vasili/va/files/oh\_calculus.html}%
-        {\textit{A Calculus Carol}}''
-\end{flushright}
-\vspace{-1em}
+\textbf{Rewriting the Derivative}:
+    \smash{$
+        \dfrac{\mathconst{d}^2}{\mathconst{d}x^2} =
+            \dfrac{\mathconst{d}u}{\mathconst{d}x} = u
+            \dfrac{\mathconst{d}u}{\mathconst{d}y}
+    $} &
+
+\textbf{Vector Fields (Condition)}:
+    If a CD vector field $ \vec{f} = (u, v) $ is a gradient, i.e. $ \vec{f} =
+    \nabla\varphi $ for some SF $ \varphi(x, y) $, then its components satisfy
+    $ \partial{v}/\partial{x} = \partial{u}/\partial{y} $. &
+
+\textbf{Vector Fields (Identification)}:
+    We want to find an SF $ \varphi $ s.t. $ \partial{\varphi}/\partial{x} = u
+    $. Integrate up, and subsitute to find a closed form for the constant of
+    integration $ g(y) $. \\
+
+\hline
+
+\textbf{Arc Length}:
+    If $ \gamma $ is s.t. $ \gamma \colon [a, b] \to \mathbb{R}^2 $, where
+    $ \gamma(t) = (x(t), y(t)) $ and $ x, y $ are continuous differentiable,
+    $ L(\gamma) =
+        \int_a^b \sqrt{x^\prime(t)^2 + y^\prime(t)^2} \mathconst{d}t $. &
+
+\textbf{FTC (1)}:
+    If $ f \colon [a, b] \to \mathbb{C} $ is a continuous function, then
+    $ \mathconst{d}/\mathconst{d}x
+        \left[ \int_a^x f(y) \mathconst{d}y \right] = f(y) $, where
+    $ F \colon [a, b] \to \mathbb{R} $ is such that $ F(x) = \int_a^x f $. &
+
+\textbf{FTC (2)}:
+    If $ f $ is differentiable on $ [a, b] $ and $ f^\prime $ is continuous on
+    $ [a, b] $, then $ \int_a^b f^\prime = f(b) - f(a) $. \\
+
+\hline
+\end{tabular}
 \end{document}
 
