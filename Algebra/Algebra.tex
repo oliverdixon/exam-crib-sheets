@@ -5,6 +5,7 @@
 
 \input{../preamble.tex}
 \newcommand{\modulename}{Algebra}
+\newcommand{\norm}[1]{\ensuremath\|#1\|\,}
 
 \begin{document}
 \centering
@@ -277,18 +278,67 @@
 \end{tabular}
 
 \vfill
-\emph{Note:} Unless specified otherwise, an arbitrary point $ X $ (uppercase
-Latin character) has a position vector $ \vec{x} $ (lowercase), where $ \vec{x}
-= (x_1, x_2, x_3) $.
+\emph{Note \#1:} Unless specified otherwise, an arbitrary point $ X $ (uppercase
+Latin character) has position vector $ \vec{x} $ (lowercase), where $ \vec{x} =
+(x_1, x_2, x_3) $.
 \vfill
 
 \clearpage
 \begin{tabular}{|m{.31\linewidth}|m{.31\linewidth}|m{.31\linewidth}|}
-    \hline
-    1 & 2 & 3 \\
-    \hline
-    4 & 5 & 6 \\
-    \hline
+\hline
+
+\textbf{Norm of Matrix}:
+    For a matrix $ A \in \mathbb{R}^{n \times n} $, its Euclidean norm is
+    defined as $ \norm{A} = \max_{\norm{\vec{v}} \leq 1} \norm{A \vec{v}} $,
+    where $ \norm{\vec{v}} $ is the Euclidean norm of $ \vec{v} $ in $
+    \mathbb{R}^n $. &
+
+\textbf{Exponential of a Matrix}:
+    For some $ A \in \mathbb{R}^{n \times n} $, $ \exp A = \sum_{k=0}^\infty
+    A^k/k! $. This sum is convergent, such that $ \norm{\exp A} = \exp \norm{A}
+    $. If $ \dot{\vec{x}} = A\vec{x} $, then the general solution is given by $
+    \vec{x}(t) = \exp(tA)\vec{v} $. &
+
+\textbf{CODEs}:
+    \smash{$
+        \ldots\vec{x}(t) = \mathconst{e}^{tA}\vec{v} = M
+        \begin{pmatrix}
+            \mathconst{e}^{\lambda_1 t} & 0 & \ldots \\
+            0 & \mathconst{e}^{\lambda_2 t} & \ldots \\
+            \ldots & \ldots & \mathconst{e}^{\lambda_n t}
+        \end{pmatrix}
+        M^{-1}\vec{v}
+    $} \\
+
+\hline
+
+\textbf{Real Symmetric Matrices}:
+    Let $ A \in \mathbb{R}^{n \times n} $ with $ A^T = A $. Then, the
+    eigenvalues of $ A $ are real, and eigenvectors belonging to distinct
+    eigenvalues are orthogonal. &
+
+\textbf{Orthogonal Matrices}:
+    A square matrix $ M \in \mathbb{F}^{n \times n} $ satisfying $ M^T M = I_n $
+    is an \emph{orthogonal} matrix. The columns of such a matrix are mutually
+    orthonormal vectors. &
+
+\textbf{Row Reduction Methods}:
+    When finding the Echelon form, we can multiply rows by non-zero scalar
+    constants, take the sum of two rows, and interchange rows. \\
+
+\hline
 \end{tabular}
+
+\vspace{1em}
+\emph{Note \#2:} To write a GCD as a linear combination of its arguments, a
+modified Euclidean algorithm can be employed, as described in the Autumn Term
+Notes.  However, a faster and less error-prone method is described here:
+\url{https://math.stackexchange.com/a/85841}. It is not clear whether the use of
+an alternative method will be penalised during examinations.
+
+\vspace{.5em}
+\emph{Note \#3:} The Lagrange interpolation formula is covered in the Notes, and
+is not explicitly marked as non-examinable, but has been confirmed to be as such
+by the module leader.
 \end{document}
 
