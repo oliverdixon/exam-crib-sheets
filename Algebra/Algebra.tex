@@ -9,19 +9,134 @@
 \begin{document}
 \centering
 \begin{tabular}{|m{.31\linewidth}|m{.31\linewidth}|m{.31\linewidth}|}
-        \hline
-        1 & 2 & 3 \\
-        \hline
-        4 & 5 & 6 \\
-        \hline
+\hline
+
+\textbf{De Moivre's Theorem}:
+    For $ w, z \in \mathbb{C} $ such that $ w = \rho
+    \mathconst{e}^{\mathconst{i} \varphi} $ and $ z = r
+    \mathconst{e}^{\mathconst{i} \theta} $,
+    $ wz = \rho r \mathconst{e}^{\mathconst{i}(\varphi + \theta)} $.
+    Alternatively, for $ x \in \mathbb{R} $ and $ n \in \mathbb{Z} $,
+    $ \cos(nx) + \mathconst{i}\sin(nx) = (\cos x + \mathconst{i} \sin x)^n $. &
+
+\textbf{Complex Sine}:
+    For $ z \in \mathbb{C} $,
+    \smash{$
+        \sin z = \dfrac{1}{2 \mathconst{i}} (\mathconst{e}^{\mathconst{i} z} -
+        \mathconst{e}^{-\mathconst{i} z}).
+    $} &
+
+\textbf{Complex Cosine}:
+    For $ z \in \mathbb{C} $,
+    \smash{$
+        \cos z = \dfrac{1}{2} (\mathconst{e}^{\mathconst{i} z} +
+        \mathconst{e}^{-\mathconst{i} z}).
+    $} \\
+
+\hline
+
+\textbf{Roots of Unity (Computing)}:
+    There are exactly $ n $ $ n^{\text{th}} $ roots of unity. In general,
+    $ \zeta^{(n)}_1 = \mathconst{e}^0 = 1 $,
+    $ \zeta^{(n)}_2 = \mathconst{e}^{2\pi\mathconst{i}/n} $, \ldots,
+    $ \zeta^{(n)}_3 = \mathconst{e}^{4\pi\mathconst{i}/n} $, \ldots,
+    $ \zeta^{(n)}_n = \mathconst{e}^{2(n-1)\pi\mathconst{i}/n} $. &
+
+\textbf{Roots of Unity (Properties)}:
+    For $ n \geq 2 $, $ \sum_{j=1}^n \zeta^{(n)}_j = 0 $ and $ \prod_{j=1}^n
+    \zeta^{(n)}_j = (-1)^{n+1} $. All roots also lie on the unit circle, such
+    that $ \vert \zeta^{(n)}_j \vert = 1 $ for $ 1 \leq j \leq n $. &
+
+\textbf{Euclid's Algorithm (1)}:
+    Given $ a \in \mathbb{Z} $ and $ b \in \mathbb{N} $, there exist $ q_1 $ and
+    $ r_1 $ such that $ a = q_1 b + r_1 $ and $ 0 \leq r_1 < b $. If $ r_1 = 0
+    $, then $ \gcd(a, b) = b $. Otherwise, \ldots \\
+
+\hline
+
+\textbf{Euclid's Algorithm (2)}:
+    \ldots\ find $ q_2 $ and $ r_2 $ such that $ b = q_2 r_1 + r_2 $ and $ 0
+    \leq r_2 < r_1 $. If $ r_2 = 0 $, set $ \gcd(b, r_1) = \gcd(a, b) = r_1 $.
+    Otherwise, iterate on the remainders. &
+
+\textbf{Solving Congruence Equations (1)}:
+    To solve $ ax \equiv b \pmod{m} $, find $ d = \gcd(a, m) $. If $ d \nmid
+    b $, there are no solutions. Otherwise, write $ b = b^\prime d $ and
+    $ d = sa + tm $. &
+
+\textbf{Solving Congruence Equations (2)}:
+    A single solution is $ x = sb^\prime $; let $ m^\prime = m / d $. All
+    numbers congruent to $ sb^\prime \pmod{m^\prime} $ comprise the full
+    solution set. \\
+
+\hline
+
+\textbf{Chinese Remainder Theorem}:
+    If $ m_1 $ and $ m_2 $ are s.t.\ $ \gcd(m_1, m_2) = 1 $, then there is a
+    unique $ x \pmod{m_1m_2} $ that satisfies $ x \equiv c_1 \pmod{m_1} $ and $
+    x \equiv c_2 \pmod{m_2} $. &
+
+\textbf{Binomial Theorem}:
+    \smash{$\displaystyle
+        (x+y)^n = \sum_{j=0}^n \binom{n}{j}\,x^{n-j}
+    $} &
+
+\textbf{Binomial Coefficient}:
+    \smash{$\displaystyle
+        \binom{n}{j} = \frac{n!}{j!(n-j)!}
+    $} \\
+
+\hline
+
+\textbf{Cross Product}:
+    \smash{$
+        \begin{pmatrix}
+            u_1 \\ u_2 \\ u_3
+        \end{pmatrix} \times
+        \begin{pmatrix}
+            v_1 \\ v_2 \\ v_3
+        \end{pmatrix} =
+        \det\begin{pmatrix}
+            \vec{i} & \vec{j} & \vec{k} \\
+            u_1 & u_2 & u_3 \\
+            v_1 & v_2 & v_3
+        \end{pmatrix}
+    $} &
+
+\textbf{STP}:
+    \smash{$
+        \begin{pmatrix}
+            t_1 \\ t_2 \\ t_3
+        \end{pmatrix} \cdot
+        \left[\begin{pmatrix}
+            u_1 \\ u_2 \\ u_3
+        \end{pmatrix} \times
+        \begin{pmatrix}
+            v_1 \\ v_2 \\ v_3
+        \end{pmatrix}\right] =
+        \det\begin{pmatrix}
+            t_1 & t_2 & t_3 \\
+            u_1 & u_2 & u_3 \\
+            v_1 & v_2 & v_3
+        \end{pmatrix}
+    $} &
+
+\textbf{Parametric Line}:
+    An equation of a line can be written as $ x = p_1 + tv_1 $,
+    $ y = p_2 + tv_2 $, and $ z = p_3 + tv_3 $, for $ t \in \mathbb{R} $.
+    $ (p_1, p_2, p_3) $ are the coordinates of a point on the line, and
+    $ (v_1, v_2, v_3) $ denotes the direction of the line. \\
+
+\hline
+
 \end{tabular}
 \clearpage
 \begin{tabular}{|m{.31\linewidth}|m{.31\linewidth}|m{.31\linewidth}|}
-        \hline
-        1 & 2 & 3 \\
-        \hline
-        4 & 5 & 6 \\
-        \hline
+    \hline
+    1 & 2 & 3 \\
+    \hline
+    4 & 5 & 6 \\
+    \hline
 \end{tabular}
 \end{document}
 
