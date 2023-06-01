@@ -129,7 +129,159 @@
 
 \hline
 
+\textbf{Point-to-Line}:
+    If $ \vec{v} $ is a vector parallel to the line, $ \vec{p} $ is the position
+    vector of a point on the line, and $ \vec{r} $ is a point, then the minimal
+    distance from $ R $ to the line is $ \vert (\vec{p} - \vec{r}) \times
+    \vec{v} \vert/\vert\vec{v}\vert $. &
+
+\textbf{Plane Equations}:
+    The position vector of an arbitrary point $ X $ in the plane is
+    $ \vec{x} = \vec{p} + s \vec{u} + t \vec{v} $ for $ s, t \in \mathbb{R} $,
+    where $ \vec{u} $ and $ \vec{v} $ are parallel to the plane, and $ P $ is a
+    plane point. &
+
+\textbf{Intersection of Line and Plane}:
+    Write the line and plane in parametric form, equate each component, and
+    solve for $ s $, $ r $, and $ t $. \\
+
+\hline
+
+\textbf{Normal Vector to a Plane}:
+    If $ \vec{p} $ is the position vector of a known point, and $ \vec{x} $ is
+    the position vector of an arbitrary point, then $ ( \vec{x} - \vec{p} )
+    \cdot \vec{n} = 0 $, where $ \vec{n} $ is the normal vector. &
+
+\textbf{Point-to-Plane}:
+    The distance from a point $ A $ to a plane is
+    $ \vert (\vec{p} - \vec{a}) \cdot \vec{n} \vert / \vert \vec{n} \vert $,
+    where $ \vec{n} $ is the normal vector, and $ P $ is a known point in the
+    plane. &
+
+\textbf{Matrix Multiplication}:
+    If $ A \in \mathbb{F}^{m \times n} $ and $ B \in \mathbb{F}^{n \times p} $,
+    then the product $ AB $ is such that $ (AB)_{ik} = \sum_{j=1}^n A_{ij}
+    B_{jk} $. (For our purposes, the field $ \mathbb{F} $ is the set of reals
+    $ \mathbb{R} $.) \\
+
+\hline
+
+\textbf{Diagonal and Transpose Matrices}:
+    A square matrix $ D \in \mathbb{F}^{n \times n} $ is \emph{diagonal} if
+    $ D_{ij} = 0 $ for all $ i \neq j $. Diagonal matrices commute under
+    multiplication. Also, for $ B \in \mathbb{F}^{m \times n}$, $ A^T_{ij} =
+    A_{ji} $ for $ 1 \leq i \leq n $ and $ 1 \leq j \leq m $. &
+
+\textbf{Echelon Forms (1 and 2)}:
+    \smash{$
+        \begin{pmatrix}
+            \star & \square & \square \\
+            0 & \star & \square \\
+            0 & 0 & \star
+        \end{pmatrix}
+        \begin{pmatrix}
+            \star & \square & \square \\
+            0 & \star & \square \\
+            0 & 0 & 0
+        \end{pmatrix}
+    $} &
+
+\textbf{Echelon Forms (3 and 4)}:
+    \smash{$
+        \begin{pmatrix}
+            \star & \square & \square \\
+            0 & 0 & \star \\
+            0 & 0 & 0
+        \end{pmatrix}
+        \begin{pmatrix}
+            \star & \square & \square \\
+            0 & 0 & 0 \\
+            0 & 0 & 0
+        \end{pmatrix}
+    $} \\
+
+\hline
+
+\textbf{Reduced EFs}:
+    \smash{$
+        \begin{pmatrix}
+            \star & 0 & 0 \\
+            0 & \star & 0 \\
+            0 & 0 & \star
+        \end{pmatrix}
+        \begin{pmatrix}
+            \star & 0 & \square \\
+            0 & \star & \square \\
+            0 & 0 & \star
+        \end{pmatrix}
+        \begin{pmatrix}
+            \star & \square & 0 \\
+            0 & 0 & \star \\
+            0 & 0 & 0
+        \end{pmatrix}
+    $} &
+
+\textbf{Systems of Linear Equations}:
+    Construct the \emph{augmented matrix}, use row operations to transform it
+    into an Echelon form, reinterpret as a system of linear equations, and solve
+    for each component in terms of a parameter. &
+
+\textbf{Inverse (2x2)}:
+    \smash{$\displaystyle
+        A = \begin{pmatrix}
+            a & b \\
+            c & d
+        \end{pmatrix},\,
+        A^{-1} = \frac{1}{\det A}
+        \begin{pmatrix}
+            d & -b \\
+            -c & a
+        \end{pmatrix}
+    $} \\
+
+\hline
+
+\textbf{Determinant}:
+    In general, for a matrix $ A $, $ \det A = \sum_{i=1}^n (-1)^{i+j} a_{ij}
+    \det(A_{ij}) $. For an upper triangular matrix $ A^E $ with diagonal $
+    \mu_0, \ldots, \mu_n $, $ \det\left(A^E\right) = \prod_{i=1}^n \mu_i $. &
+
+\textbf{Computing an Eigensystem (1)}:
+    For the \emph{eigenvalues} of a matrix $ A $, solve $ \det(A-\lambda
+    I_n) = 0 $ for $ \lambda $ (the eigenvalues), where $ I_n $ is the identity
+    matrix in $ \mathbb{F}^{n \times n} $. &
+
+\textbf{Computing an Eigensystem (2)}:
+    For each eigenvalue $ \lambda_0 $, the corresponding \emph{eigenvector} $
+    \vec{v}_0/C_0 $ is such that $ (A - \lambda_0 I_n) \vec{v}_0 = \vec{0} $,
+    where $ C_0 \in \mathbb{F} $ is a nonzero constant. \\
+
+\hline
+
+\textbf{Eigendiagonalisation (1)}:
+    If $ A \in \mathbb{F}^{n \times n} $ has linearly independent eigenvectors $
+    A\vec{x}_1 = \lambda_1\vec{x}_1, \ldots, A\vec{x}_n = \lambda_n\vec{x}_n $,
+    then $ A $ is similar to the diagonal matrix $ \Lambda $ with $ \lambda_0,
+    \ldots, \lambda_n $. &
+
+\textbf{Eigendiagonalisation (2)}:
+    If the columns of a matrix $ M $ are given by the eigenvectors of $ A $,
+    then $ AM = M\Lambda $, and $ \Lambda = M^{-1}AM $. &
+
+\textbf{Eigendiagonalisation (3)}:
+    If we have $ A = M \Lambda M^{-1} $ with matrices $ M $ invertible and $
+    \Lambda $ diagonal, then $ A^n = (M \Lambda M^{-1})(M \Lambda M^{-1}) \ldots
+    (M \Lambda M^{-1}) = M \Lambda^n M^{-1} $. \\
+
+\hline
 \end{tabular}
+
+\vfill
+\emph{Note:} Unless specified otherwise, an arbitrary point $ X $ (uppercase
+Latin character) has a position vector $ \vec{x} $ (lowercase), where $ \vec{x}
+= (x_1, x_2, x_3) $.
+\vfill
+
 \clearpage
 \begin{tabular}{|m{.31\linewidth}|m{.31\linewidth}|m{.31\linewidth}|}
     \hline
