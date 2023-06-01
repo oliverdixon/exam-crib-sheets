@@ -93,7 +93,7 @@ upload_files () {
         if [[ $(dnsdomainname) == $NET_DOMAIN ]] && \
                         [[ $(whoami) == $NET_USER ]]; then
                 print_info "Copying to the Local Network..."
-                rsync -Rvtu "$@" "${WEB_PATH/#\~/$HOME}"
+                rsync -Rvtu "$@" "$HOME/$WEB_PATH"
         else
 
                 print_info "Publishing to the Remote... (Requires York"\
