@@ -2,8 +2,8 @@
 # OWD 2023
 
 # This script requires a moderately recent version of GhostScript (10+, for the
-# new C-based PDF parser) and a copy of GraphicsMagick with the PDF and PNG
-# codecs installed and enabled.
+# new C-based PDF parser) and a copy of GraphicsMagick or ImageMagick with the
+# PDF and PNG codecs installed and enabled.
 
 GIT_ROOT="$(git rev-parse --show-toplevel)"
 INDEX="$GIT_ROOT/publishing/index"
@@ -47,9 +47,9 @@ compress_pdf () {
 }
 
 # update_raster: If the source PDF is newer than its corresponding raster, use
-# ImageMagick to regenerate the PNG, and report the change. If a raster is
-# out-of-date, and ImageMagick fails, its non-zero error code is forwarded.
-# Otherwise, zero is returned.
+# ImageMagick or (preferably) GraphicsMagick to regenerate the PNG, and report
+# the change. If a raster is out-of-date, and 'convert' fails, its non-zero
+# error code is forwarded.  Otherwise, zero is returned.
 
 update_raster () {
         local RASTER_NAME="${1%.*}_Raster"
@@ -59,17 +59,31 @@ update_raster () {
         # the entire cluster would've been generated together.
 
         if [[ ${RASTER_NAME}_0.png -ot $1 ]]; then
-                gm convert                \
-                        -density 130      \
-                        -background white \
-                        -colorspace gray  \
-                        -depth 4          \
-                        pdf:"$1"          \
-                        +adjoin           \
-                        png:"${RASTER_NAME}_%1d.png"
+                if command -v gm &> /dev/null; then
+                        gm convert                \
+                                -density 130      \
+                                -background white \
+                                -colorspace gray  \
+                                -depth 4          \
+                                pdf:"$1"          \
+                                +adjoin           \
+                                png:"${RASTER_NAME}_%1d.png"
 
-                ret=$?
-                [[ $ret -eq 0 ]] && print_info "Rasterised: $1"
+                        ret=$?
+                        [[ $ret -eq 0 ]] && print_info "Rasterised (GM): $1"
+                else
+                        convert                   \
+                                -density 130      \
+                                -background white \
+                                -alpha remove     \
+                                -colorspace gray  \
+                                -depth 4          \
+                                "$1"              \
+                                "${RASTER_NAME}.png"
+
+                        ret=$?
+                        [[ $ret -eq 0 ]] && print_info "Rasterised (IM): $1"
+                fi
         fi
 
         return $ret
