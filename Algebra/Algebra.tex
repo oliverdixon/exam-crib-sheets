@@ -4,9 +4,13 @@
 \input{../preamble.tex}
 \newcommand{\modulename}{Algebra}
 \newcommand{\norm}[1]{\ensuremath\|#1\|\,}
+\DeclareMathOperator{\adj}{adj}
 
 \begin{document}
 \centering
+%
+% SIDE 1 (OBVERSE)
+%
 \begin{tabular}{|m{.31\linewidth}|m{.31\linewidth}|m{.31\linewidth}|}
 \hline
 
@@ -37,7 +41,7 @@
 \textbf{Roots of Unity (Computing)}:
     There are exactly $ n $ $ n^{\text{th}} $ roots of unity. In general,
     $ \zeta^{(n)}_1 = \mathconst{e}^0 = 1 $,
-    $ \zeta^{(n)}_2 = \mathconst{e}^{2\pi\mathconst{i}/n} $, \ldots,
+    $ \zeta^{(n)}_2 = \mathconst{e}^{2\pi\mathconst{i}/n} $,
     $ \zeta^{(n)}_3 = \mathconst{e}^{4\pi\mathconst{i}/n} $, \ldots,
     $ \zeta^{(n)}_n = \mathconst{e}^{2(n-1)\pi\mathconst{i}/n} $. &
 
@@ -223,7 +227,7 @@
 \textbf{Systems of Linear Equations}:
     Construct the \emph{augmented matrix}, use row operations to transform it
     into an Echelon form, reinterpret as a system of linear equations, and solve
-    for each component in terms of a parameter. &
+    for each component in terms of the parameter. &
 
 \textbf{Inverse (2x2)}:
     \smash{$\displaystyle
@@ -277,11 +281,14 @@
 
 \vfill
 \emph{Note:} Unless specified otherwise, an arbitrary point $ X $ (uppercase
-Latin character) has position vector $ \vec{x} $ (lowercase), where $ \vec{x} =
-(x_1, x_2, x_3) $.
+Latin character) in $ n $-space has position vector $ \vec{x} \in \mathbb{F}^n
+$, where $ \vec{x} = (x_1, x_2, \ldots, x_n) $.
 \vfill
 
 \clearpage
+%
+% SIDE 2 (REVERSE)
+%
 \begin{tabular}{|m{.31\linewidth}|m{.31\linewidth}|m{.31\linewidth}|}
 \hline
 
@@ -312,8 +319,8 @@ Latin character) has position vector $ \vec{x} $ (lowercase), where $ \vec{x} =
 
 \textbf{Real Symmetric Matrices}:
     Let $ A \in \mathbb{R}^{n \times n} $ with $ A^T = A $. Then, the
-    eigenvalues of $ A $ are real, and eigenvectors belonging to distinct
-    eigenvalues are orthogonal. &
+    eigenvalues of $ A $ are real, and distinct eigenvectors are orthogonal. $ A
+    $ is \emph{symmetric} if $ A^T = A $. &
 
 \textbf{Orthogonal Matrices}:
     A square matrix $ M \in \mathbb{F}^{n \times n} $ satisfying $ M^T M = I_n $
@@ -325,6 +332,54 @@ Latin character) has position vector $ \vec{x} $ (lowercase), where $ \vec{x} =
     constants, take the sum of two rows, and interchange rows. \\
 
 \hline
+
+\textbf{Coupled ODEs (1)}:
+    Let $ A $ be the matrix of coefficients given in the coupled linear system
+    of ODEs. $ M $ and $ \Lambda $ are such that $ M^{-1}AM = \Lambda $: $ M $
+    is the composed eigenvector matrix and $ \Lambda $ is the diagonal matrix of
+    eigenvalues. &
+
+\textbf{Coupled ODEs (2)}:
+    Note that $ (x^\prime, y^\prime) = M^{-1}(x, y) $. Then, $
+    \mathconst{d}(x^\prime, y^\prime)/\mathconst{d}t = \Lambda(x^\prime,
+    y^\prime) $. Expand $ \Lambda (x^\prime, y^\prime) $ and solve
+    (component-wise) for the first-order ODEs $ x^\prime(t) $ and $ y^\prime(t)
+    $. [Recall that $ u^\prime(x) = cu(x) \implies u(x) = A\mathconst{e}^{cx}
+    $.] &
+
+\textbf{The Remainder Theorem}:
+    Let $ p $ and $ q $ be an $ n $- and $ m $-degree complex polynomials
+    respectively, with $ m \leq n $. There exists polynomials $ s $ and $ r $ of
+    degrees $ n-m $ and $ k < m $ s.t.\ $ p(x) = q(x)s(x) + r(x) $. \\
+
+\hline
+
+\textbf{Cofactors/Minors}:
+    For each pair $ ij $, the \emph{cofactor} $ c_{ij} $ of $ A \in
+    \mathbb{F}^{n \times n} $ is s.t.\ $ c_{ij} = (-1)^{i+j} \det(A_{ij}) $,
+    where $ A_{ij} $ is the \emph{minor} of $ A $ (obtained by removing row $ i
+    $ and column $ j $). &
+
+\textbf{Adjoint and Inverse (3x3)}:
+    The \emph{adjoint} matrix of $ A $ is $ \adj A = C^T $, where $ C = [c_{ij}]
+    $. For a matrix $ A $, the \emph{inverse} is $ A^{-1} = \adj A/\det A $. &
+
+\textbf{Linear Independence}:
+    Vectors $ \vec{v}_1, \ldots, \vec{v}_m \in \mathbb{F}^n $ are \emph{linearly
+    independent} if and only if $ \alpha_1\vec{v}_1, \ldots, \alpha_m\vec{v}_m =
+    \vec{0} $ is solved by $ \alpha_1 = \ldots = \alpha_m = 0 $, for $ \alpha_1,
+    \ldots, \alpha_m \in \mathbb{F} $. \\
+
+\hline
 \end{tabular}
+\vfill
+\begin{flushleft}
+    An amusing collection of mathematical poetry \ldots
+
+    \ldots\ some of which involves Linear-Algebraic themes:
+
+    \vspace{.5em}
+    \url{https://people.math.harvard.edu/~knill/poetry/}
+\end{flushleft}
 \end{document}
 
