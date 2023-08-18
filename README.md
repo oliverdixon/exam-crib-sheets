@@ -10,8 +10,10 @@ continue reading.
 ## Index of Sheets
 
  * Year 1: Calculus [*Archived*]
- * Year 1: Algebra [*Complete, subject to minor corrections*. Exam: 2nd June,
-        13:30--16:00, F/CENHL]
+ * Year 1: Algebra [*Archived*]
+ * Year 2, Semester 1: Metric Spaces [*Upcoming*]
+ * Year 2, Semester 2: Groups, Rings, and Fields [*Upcoming*]
+ * Year 2, Semester 2: Linear Algebra [*Upcoming*]
 
 ## Things to Know
 
@@ -47,6 +49,15 @@ three things:
 
 * If you have any corrections, comments, or questions concerning the content
   of this repository, please contact me at <od641@york.ac.uk>.
+
+* Given that I [OD] am enrolled on the [joint CS/Maths honours
+  programme](https://www.york.ac.uk/study/undergraduate/courses-2023/mmath-mathematics-computer-science-year-industry/),
+  I am not sitting approximately half of the standard Mathematics examinations.
+  Therefore, this collection of crib sheets will be slightly incomplete for
+  [single-subject](https://www.york.ac.uk/study/undergraduate/courses-2023/mmath-mathematics/)
+  students. Pre-prepared crib sheets for Computer Science exams are unnecessary
+  since, at the present moment, almost all undergraduate CS exams are taking
+  place on-line with unlimited access to resources.
 
 In addition to the crib sheets, I have provided a short commentary on the
 contents of recent examinations. These may be used to extrapolate predictions
