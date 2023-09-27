@@ -1,3 +1,5 @@
+**NOTE:** Crib sheets are no longer allowed in Mathematics examinations.
+
 # Examination Crib Sheets
 
 This repository contains, among other things, my personal collection of
@@ -11,9 +13,6 @@ continue reading.
 
  * Year 1: Calculus [*Archived*]
  * Year 1: Algebra [*Archived*]
- * Year 2, Semester 1: Metric Spaces [*Upcoming*]
- * Year 2, Semester 2: Groups, Rings, and Fields [*Upcoming*]
- * Year 2, Semester 2: Linear Algebra [*Upcoming*]
 
 ## Things to Know
 
